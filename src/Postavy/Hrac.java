@@ -29,7 +29,7 @@ public class Hrac {
         return null;
     }
 
-    public boolean souboj(NepratelskeNPC nepitel, Predmet predmet){
+    public boolean souboj(NPC npc, Predmet predmet){
         return false;
     }
 

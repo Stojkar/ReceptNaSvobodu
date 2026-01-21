@@ -4,17 +4,28 @@ import Pribeh.Konec;
 
 public class Zed {
 
-
+    private String id;
     private boolean pruchodnost;
-    private Mistnost mistnostZaZdi;
+    private Mistnost mistnost1;
+    private Mistnost mistnost2;
     private Konec konec;
     private int sila;
     private boolean jeVentilace;
+    private String popis;
+
+
 
 
     public void znicitZed(){
 
     }
+
+
+    public Mistnost getDruhouMistnost(Mistnost mistnostKdeStoji){
+        return null;
+    }
+
+
 
     public Mistnost vypocetPruchodu(){
 
