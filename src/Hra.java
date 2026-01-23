@@ -24,7 +24,7 @@ public class Hra {
 
     public void test(){
 
-        DataHry data = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("skoouska.json"));
+        DataHry data = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("data.json"));
         hrac = new Hrac(data.getMistosti().getFirst(),5);
 
 
