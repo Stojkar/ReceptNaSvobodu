@@ -33,8 +33,15 @@ public class Hrac {
         return false;
     }
 
-    public Hrac(Mistnost aktMistnost, Inventar inventar) {
+    public Hrac(Mistnost aktMistnost, int maxPredmetu) {
         AktMistnost = aktMistnost;
-        this.inventar = inventar;
+        this.inventar = inventar = new Inventar(maxPredmetu);
+    }
+
+    @Override
+    public String toString() {
+        return "Hrac{" +
+                "AktMistnost=" + AktMistnost +
+                '}';
     }
 }

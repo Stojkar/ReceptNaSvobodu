@@ -1,0 +1,841 @@
+{
+  "konec": [
+    {
+      "nazev": "cestanasili",
+      "rukojmi": "true"
+    },
+    {
+      "nazev": "cestanasili",
+      "rukojmi": "false"
+    },
+    {
+      "nazev": "cestaexploze",
+      "rukojmi": ""
+    }
+  ],
+  "predmety": [
+    {
+      "id": "lzice",
+      "nazev": "Lžíce",
+      "popis": "Silná kovová lžíce. Mohla by sloužit k menším vykopávkám.",
+      "lokace": "jidelna",
+      "typ": "NASTROJ",
+      "sila": 5
+    },
+    {
+      "id": "krumpac",
+      "nazev": "Krumpáč",
+      "popis": "Těžký krumpáč ideální na bourání zdí.",
+      "lokace": "dilsnaradim",
+      "typ": "NASTROJ",
+      "sila": 50
+    }
+  ],
+  "mistnosti": [
+    {
+      "id": "tvojecela",
+      "nazev": "Tvoje cela",
+      "popis": "Tvoje malá tmavá cela. Jediné světlo sem proniká okénkem ve dveřích.",
+      "severZed": {
+        "nazev": "zed-chodbadocel-tvojecela"
+      },
+      "vychodniZed": {
+        "nazev": "zed-sprchy-tvojecela"
+      },
+      "zapadniZed": {
+        "nazev": "zed-tvojecela-venkovniposilovna"
+      },
+      "jizniZed": {
+        "nazev": "zed-vnější-jih-tvojecela"
+      },
+      "predmety": [],
+      "npc": []
+    },
+    {
+      "id": "jidelna",
+      "nazev": "Jídelna",
+      "popis": "Velká místnost se stoly plnými špinavého nádobí. Na stěně visí olejový obraz.",
+      "severZed": {
+        "nazev": "zed-vnější-sever-jidelna"
+      },
+      "vychodniZed": {
+        "nazev": "zed-jidelna-skladszbraněmi"
+      },
+      "zapadniZed": {
+        "nazev": "zed-jidelna-dalsicely"
+      },
+      "jizniZed": {
+        "nazev": "zed-jidelna-sprchy"
+      },
+      "predmety": [
+        "lzice"
+      ],
+      "npc": []
+    },
+    {
+      "id": "dalsicely",
+      "nazev": "Další čely",
+      "popis": "Řada dalších vězeňských cel. Všechny jsou prázdné.",
+      "severZed": {
+        "nazev": "zed-vnější-sever-dalsicely"
+      },
+      "vychodniZed": {
+        "nazev": "zed-jidelna-dalsicely"
+      },
+      "zapadniZed": {
+        "nazev": "zed-dalsicely-dilsnaradim"
+      },
+      "jizniZed": {
+        "nazev": "zed-dalsicely-chodbadocel"
+      },
+      "predmety": [
+        "lopatka",
+        "nastroj1",
+        "nastroj2"
+      ],
+      "npc": []
+    },
+    {
+      "id": "dilsnaradim",
+      "nazev": "Dílna s nářadím",
+      "popis": "Malá dílna se starým zrezivělým nářadím.",
+      "severZed": {
+        "nazev": "zed-vnější-sever-dilsnaradim"
+      },
+      "vychodniZed": {
+        "nazev": "zed-dalsicely-dilsnaradim"
+      },
+      "zapadniZed": {
+        "nazev": "zed-vnější-zapad-dilsnaradim"
+      },
+      "jizniZed": {
+        "nazev": "zed-dilsnaradim-dvorekprovezne"
+      },
+      "predmety": [],
+      "npc": []
+    },
+    {
+      "id": "skladszbraněmi",
+      "nazev": "Sklad se zbraněmi",
+      "popis": "Sklad plný zbraní a výzbroje.",
+      "severZed": {
+        "nazev": "zed-vnější-sever-skladszbraněmi"
+      },
+      "vychodniZed": {
+        "nazev": "zed-vnější-vychod-skladszbraněmi"
+      },
+      "zapadniZed": {
+        "nazev": "zed-jidelna-skladszbraněmi"
+      },
+      "jizniZed": {
+        "nazev": "zed-skladszbraněmi-velin"
+      },
+      "predmety": [],
+      "npc": []
+    },
+    {
+      "id": "hlavnicchodba",
+      "nazev": "Hlavní chodba",
+      "popis": "Dlouhá tmavá chodba s mnoha dveřmi na obou stranách.",
+      "severZed": {
+        "nazev": "zed-jidelna-hlavnichodba"
+      },
+      "vychodniZed": {
+        "nazev": "zed-hlavnichodba-velin"
+      },
+      "zapadniZed": {
+        "nazev": "zed-hlavnichodba-chodbadocel"
+      },
+      "jizniZed": {
+        "nazev": "zed-hlavnichodba-sprchy"
+      },
+      "predmety": [],
+      "npc": [
+        "vezn1",
+        "vezn2",
+        "vezn3"
+      ]
+    },
+    {
+      "id": "chodbadocel",
+      "nazev": "Chodba do cel",
+      "popis": "Úzká chodba vedoucí k vězeňským celám.",
+      "severZed": {
+        "nazev": "zed-dalsicely-chodbadocel"
+      },
+      "vychodniZed": {
+        "nazev": "zed-hlavnichodba-chodbadocel"
+      },
+      "zapadniZed": {
+        "nazev": "zed-chodbadocel-dvorekprovezne"
+      },
+      "jizniZed": {
+        "nazev": "zed-chodbadocel-tvojecela"
+      },
+      "predmety": [],
+      "npc": []
+    },
+    {
+      "id": "dvorekprovezne",
+      "nazev": "Dvoreček pro vězně",
+      "popis": "Malý dvorek obehnaný vysokými zdmi. Sem vycházejí vězni na procházku.",
+      "severZed": {
+        "nazev": "zed-dilsnaradim-dvorekprovezne"
+      },
+      "vychodniZed": {
+        "nazev": "zed-chodbadocel-dvorekprovezne"
+      },
+      "zapadniZed": {
+        "nazev": "zed-vnější-zapad-dvorekprovezne"
+      },
+      "jizniZed": {
+        "nazev": "zed-dvorekprovezne-venkovniposilovna"
+      },
+      "predmety": [],
+      "npc": []
+    },
+    {
+      "id": "velin",
+      "nazev": "Velín",
+      "popis": "Velitelská místnost s mnoha monitory a ovládacími panely.",
+      "severZed": {
+        "nazev": "zed-skladszbraněmi-velin"
+      },
+      "vychodniZed": {
+        "nazev": "zed-vnější-vychod-velin"
+      },
+      "zapadniZed": {
+        "nazev": "zed-hlavnichodba-velin"
+      },
+      "jizniZed": {
+        "nazev": "zed-velin-kancelarsefa"
+      },
+      "predmety": [],
+      "npc": [
+        "vezn4",
+        "vezn5",
+        "vezn6"
+      ]
+    },
+    {
+      "id": "sprchy",
+      "nazev": "Sprchy",
+      "popis": "Staré zaprášené sprchy s odpadávající dlažbou.",
+      "severZed": {
+        "nazev": "zed-hlavnichodba-sprchy"
+      },
+      "vychodniZed": {
+        "nazev": "zed-sprchy-kancelarsefa"
+      },
+      "zapadniZed": {
+        "nazev": "zed-sprchy-tvojecela"
+      },
+      "jizniZed": {
+        "nazev": "zed-vnější-jih-sprchy"
+      },
+      "predmety": [
+        "mop",
+        "loza"
+      ],
+      "npc": []
+    },
+    {
+      "id": "venkovniposilovna",
+      "nazev": "Venkovní posilovna",
+      "popis": "Posilovna pod širým nebem s improvizovanými činkami.",
+      "severZed": {
+        "nazev": "zed-dvorekprovezne-venkovniposilovna"
+      },
+      "vychodniZed": {
+        "nazev": "zed-tvojecela-venkovniposilovna"
+      },
+      "zapadniZed": {
+        "nazev": "zed-vnější-zapad-venkovniposilovna"
+      },
+      "jizniZed": {
+        "nazev": "zed-vnější-jih-venkovniposilovna"
+      },
+      "predmety": [
+        "cinky1",
+        "cinky2"
+      ],
+      "npc": []
+    },
+    {
+      "id": "kancelarsefa",
+      "nazev": "Kancelář šéfa",
+      "popis": "Luxusně zařízená kancelář vedoucího věznice.",
+      "severZed": {
+        "nazev": "zed-velin-kancelarsefa"
+      },
+      "vychodniZed": {
+        "nazev": "zed-vnější-vychod-kancelarsefa"
+      },
+      "zapadniZed": {
+        "nazev": "zed-sprchy-kancelarsefa"
+      },
+      "jizniZed": {
+        "nazev": "zed-vnější-jih-kancelarsefa"
+      },
+      "predmety": [],
+      "npc": [
+        "sef"
+      ]
+    },
+    {
+      "id": "trezorbanky",
+      "nazev": "Trezor banky",
+      "popis": "Velký bankovní trezor plný zlata a peněz. VÝHRA!",
+      "severZed": {
+        "nazev": "zed-vnější-trezor-sever"
+      },
+      "vychodniZed": {
+        "nazev": "zed-vnější-trezor-vychod"
+      },
+      "zapadniZed": {
+        "nazev": "zed-vnější-trezor-zapad"
+      },
+      "jizniZed": {
+        "nazev": "zed-ventilace-jidelna-trezorbanky"
+      },
+      "predmety": [
+        "zlato",
+        "penize"
+      ],
+      "npc": [],
+      "jeVyhra": true
+    }
+],
+  "zdi": [
+    {
+      "nazev": "zed-jidelna-hlavnichodba",
+      "mistnost1": {
+        "jmeno": "jidelna"
+      },
+      "mistnost2": {
+        "jmeno": "hlavnichodba"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře mezi Jídelnou a Hlavní chodbou"
+    },
+    {
+      "id": "zed-jidelna-dalsicely",
+      "mistnost1": {
+        "jmeno": "jidelna"
+      },
+      "mistnost2": {
+        "jmeno": "dalsicely"
+      },
+      "pruchodnost": false,
+      "sila": 1,
+      "jeVentilace": true,
+      "konec": null,
+      "popis": "Zničitelná krumpáčem"
+    },
+    {
+      "id": "zed-dalsicely-hlavnichodba",
+      "mistnost1": {
+        "jmeno": "dalsicely"
+      },
+      "mistnost2": {
+        "jmeno": "hlavnichodba"
+      },
+      "pruchodnost": false,
+      "sila": 2,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Zničitelná krumpáčem"
+    },
+    {
+      "id": "zed-dalsicely-dilsnaradim",
+      "mistnost1": {
+        "jmeno": "dalsicely"
+      },
+      "mistnost2": {
+        "jmeno": "dilsnaradim"
+      },
+      "pruchodnost": false,
+      "sila": 1,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Zničitelná klíčem a krumpáčem"
+    },
+    {
+      "id": "zed-hlavnichodba-skladszbraněmi",
+      "mistnost1": {
+        "jmeno": "hlavnichodba"
+      },
+      "mistnost2": {
+        "jmeno": "skladszbraněmi"
+      },
+      "pruchodnost": false,
+      "sila": 4,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Zničitelná zapáleným dynamitem"
+    },
+    {
+      "id": "zed-jidelna-sprchy",
+      "mistnost1": {
+        "jmeno": "jidelna"
+      },
+      "mistnost2": {
+        "jmeno": "sprchy"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-hlavnichodba-chodbadocel",
+      "mistnost1": {
+        "jmeno": "hlavnichodba"
+      },
+      "mistnost2": {
+        "jmeno": "chodbadocel"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-chodbadocel-dvorekprovezne",
+      "mistnost1": {
+        "jmeno": "chodbadocel"
+      },
+      "mistnost2": {
+        "jmeno": "dvorekprovezne"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-hlavnichodba-velin",
+      "mistnost1": {
+        "jmeno": "hlavnichodba"
+      },
+      "mistnost2": {
+        "jmeno": "velin"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-sprchy-tvojecela",
+      "mistnost1": {
+        "jmeno": "sprchy"
+      },
+      "mistnost2": {
+        "jmeno": "tvojecela"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-tvojecela-venkovniposilovna",
+      "mistnost1": {
+        "jmeno": "tvojecela"
+      },
+      "mistnost2": {
+        "jmeno": "venkovniposilovna"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-sprchy-kancelarsefa",
+      "mistnost1": {
+        "jmeno": "sprchy"
+      },
+      "mistnost2": {
+        "jmeno": "kancelarsefa"
+      },
+      "pruchodnost": false,
+      "sila": 1,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Zničitelná klíčem a krumpáčem"
+    },
+    {
+      "id": "zed-dalsicely-chodbadocel",
+      "mistnost1": {
+        "jmeno": "dalsicely"
+      },
+      "mistnost2": {
+        "jmeno": "chodbadocel"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-chodbadocel-tvojecela",
+      "mistnost1": {
+        "jmeno": "chodbadocel"
+      },
+      "mistnost2": {
+        "jmeno": "tvojecela"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-dilsnaradim-dvorekprovezne",
+      "mistnost1": {
+        "jmeno": "dilsnaradim"
+      },
+      "mistnost2": {
+        "jmeno": "dvorekprovezne"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-dvorekprovezne-venkovniposilovna",
+      "mistnost1": {
+        "jmeno": "dvorekprovezne"
+      },
+      "mistnost2": {
+        "jmeno": "venkovniposilovna"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-velin-kancelarsefa",
+      "mistnost1": {
+        "jmeno": "velin"
+      },
+      "mistnost2": {
+        "jmeno": "kancelarsefa"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Normální dveře"
+    },
+    {
+      "id": "zed-skladszbraněmi-velin",
+      "mistnost1": {
+        "jmeno": "skladszbraněmi"
+      },
+      "mistnost2": {
+        "jmeno": "velin"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": false,
+      "konec": {
+        "jmeno": "cestanasili"
+      },
+      "popis": "Východ a výhra - z Velína do skladu se zbraněmi"
+    },
+    {
+      "id": "zed-ventilace-jidelna-dalsicely",
+      "mistnost1": {
+        "jmeno": "jidelna"
+      },
+      "mistnost2": {
+        "jmeno": "dalsicely"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": true,
+      "konec": null,
+      "popis": "Ventilační šachta"
+    },
+    {
+      "id": "zed-ventilace-dalsicely-hlavnichodba",
+      "mistnost1": {
+        "jmeno": "dalsicely"
+      },
+      "mistnost2": {
+        "jmeno": "hlavnichodba"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": true,
+      "konec": null,
+      "popis": "Ventilační šachta"
+    },
+    {
+      "id": "zed-ventilace-hlavnichodba-skladszbraněmi",
+      "mistnost1": {
+        "jmeno": "hlavnichodba"
+      },
+      "mistnost2": {
+        "jmeno": "skladszbraněmi"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": true,
+      "konec": null,
+      "popis": "Ventilační šachta"
+    },
+    {
+      "id": "zed-ventilace-jidelna-trezorbanky",
+      "mistnost1": {
+        "jmeno": "jidelna"
+      },
+      "mistnost2": {
+        "jmeno": "trezorbanky"
+      },
+      "pruchodnost": true,
+      "sila": 0,
+      "jeVentilace": true,
+      "konec": {
+        "nazev": "cestaexploze"
+      },
+      "popis": "Ventilační šachta k trezoru banky"
+    },
+    {
+      "id": "zed-vnější-sever-dilsnaradim",
+      "mistnost1": {
+        "jmeno": "dilsnaradim"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-sever-dalsicely",
+      "mistnost1": {
+        "jmeno": "dalsicely"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-sever-jidelna",
+      "mistnost1": {
+        "jmeno": "jidelna"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-sever-skladszbraněmi",
+      "mistnost1": {
+        "jmeno": "skladszbraněmi"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-zapad-dilsnaradim",
+      "mistnost1": {
+        "jmeno": "dilsnaradim"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-zapad-dvorekprovezne",
+      "mistnost1": {
+        "jmeno": "dvorekprovezne"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-zapad-venkovniposilovna",
+      "mistnost1": {
+        "jmeno": "venkovniposilovna"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-vychod-skladszbraněmi",
+      "mistnost1": {
+        "jmeno": "skladszbraněmi"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-vychod-velin",
+      "mistnost1": {
+        "jmeno": "velin"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-vychod-kancelarsefa",
+      "mistnost1": {
+        "jmeno": "kancelarsefa"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-jih-venkovniposilovna",
+      "mistnost1": {
+        "jmeno": "venkovniposilovna"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-jih-tvojecela",
+      "mistnost1": {
+        "jmeno": "tvojecela"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-jih-sprchy",
+      "mistnost1": {
+        "jmeno": "sprchy"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-jih-kancelarsefa",
+      "mistnost1": {
+        "jmeno": "kancelarsefa"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-trezor-sever",
+      "mistnost1": {
+        "jmeno": "trezorbanky"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď trezoru - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-trezor-zapad",
+      "mistnost1": {
+        "jmeno": "trezorbanky"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď trezoru - nezničitelná"
+    },
+    {
+      "id": "zed-vnější-trezor-vychod",
+      "mistnost1": {
+        "jmeno": "trezorbanky"
+      },
+      "mistnost2": null,
+      "pruchodnost": false,
+      "sila": 20,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Vnější zeď trezoru - nezničitelná"
+    },
+    {
+      "id": "zed-tvojecela-kancelarsefa",
+      "mistnost1": {
+        "jmeno": "tvojecela"
+      },
+      "mistnost2": {
+        "jmeno": "kancelarsefa"
+      },
+      "pruchodnost": false,
+      "sila": 1,
+      "jeVentilace": false,
+      "konec": null,
+      "popis": "Zničitelná klíčem a krumpáčem"
+    }
+  ]
+}

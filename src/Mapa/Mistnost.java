@@ -2,47 +2,150 @@ package Mapa;
 
 import Postavy.NPC;
 import Predmety.Predmet;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import java.util.ArrayList;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Mistnost {
 
+    private String id;
     private String nazev;
     private String popis;
-    private ArrayList<Predmet> PredmetyMistnosti;
-    private ArrayList<NPC> NPCMistnosti;
+    private ArrayList<Predmet> predmetyMistnosti;
+    private ArrayList<NPC> mistnostiNPC;
 
 
+    @JsonIdentityReference(alwaysAsId = true)
     private Zed severZed;
+    @JsonIdentityReference(alwaysAsId = true)
     private Zed vychodniZed;
-    private Zed zapaadniZed;
+    @JsonIdentityReference(alwaysAsId = true)
+    private Zed zapadniZed;
+    @JsonIdentityReference(alwaysAsId = true)
     private Zed jizniZed;
 
 
-    public String popisMistnosti(){
+    public String popisMistnosti() {
         return null;
     }
 
-    public Zed poskytnutiZdi(String starna){
+    public Zed poskytnutiZdi(String starna) {
         return null;
     }
 
-    public boolean pridejPredmet(Predmet predmet){
+    public boolean pridejPredmet(Predmet predmet) {
         return false;
     }
 
-    public boolean odeberiPredmet(Predmet predmet){
+    public boolean odeberiPredmet(Predmet predmet) {
         return false;
     }
 
-    public Mistnost(String nazev, String popis, Zed severZed, Zed vychodniZed, Zed zapaadniZed, Zed jizniZed) {
+    public Mistnost(String id, String nazev, String popis, Zed severZed, Zed vychodniZed, Zed zapaadniZed, Zed jizniZed) {
+        this.id = id;
         this.nazev = nazev;
         this.popis = popis;
-        this.PredmetyMistnosti = new  ArrayList<>();
-        this.NPCMistnosti = new  ArrayList<>();
+        this.predmetyMistnosti = new ArrayList<>();
+        this.mistnostiNPC = new ArrayList<>();
         this.severZed = severZed;
         this.vychodniZed = vychodniZed;
-        this.zapaadniZed = zapaadniZed;
+        this.zapadniZed = zapaadniZed;
+        this.jizniZed = jizniZed;
+    }
+
+    @Override
+    public String toString() {
+        return "Mistnost{" +
+                "id='" + id + '\'' +
+                ", nazev='" + nazev + '\'' +
+                ", popis='" + popis + '\'' +
+                ", predmetyMistnosti=" + predmetyMistnosti +
+                ", mistnostiNPC=" + mistnostiNPC +
+                ", severZed=" + severZed +
+                ", vychodniZed=" + vychodniZed +
+                ", zapadniZed=" + zapadniZed +
+                ", jizniZed=" + jizniZed +
+                '}';
+    }
+
+    public Mistnost() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNazev() {
+        return nazev;
+    }
+
+    public void setNazev(String nazev) {
+        this.nazev = nazev;
+    }
+
+    public String getPopis() {
+        return popis;
+    }
+
+    public void setPopis(String popis) {
+        this.popis = popis;
+    }
+
+    public ArrayList<Predmet> getPredmetyMistnosti() {
+        return predmetyMistnosti;
+    }
+
+    public void setPredmetyMistnosti(ArrayList<Predmet> predmetyMistnosti) {
+        this.predmetyMistnosti = predmetyMistnosti;
+    }
+
+    public ArrayList<NPC> getMistnostiNPC() {
+        return mistnostiNPC;
+    }
+
+    public void setMistnostiNPC(ArrayList<NPC> mistnostiNPC) {
+        this.mistnostiNPC = mistnostiNPC;
+    }
+
+    public Zed getSeverZed() {
+        return severZed;
+    }
+
+    public void setSeverZed(Zed severZed) {
+        this.severZed = severZed;
+    }
+
+    public Zed getVychodniZed() {
+        return vychodniZed;
+    }
+
+    public void setVychodniZed(Zed vychodniZed) {
+        this.vychodniZed = vychodniZed;
+    }
+
+    public Zed getZapadniZed() {
+        return zapadniZed;
+    }
+
+    public void setZapadniZed(Zed zapadniZed) {
+        this.zapadniZed = zapadniZed;
+    }
+
+    public Zed getJizniZed() {
+        return jizniZed;
+    }
+
+    public void setJizniZed(Zed jizniZed) {
         this.jizniZed = jizniZed;
     }
 }

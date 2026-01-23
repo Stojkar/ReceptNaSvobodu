@@ -11,6 +11,8 @@ public class NPC {
         VYJEDNAVANI
     }
 
+    public NPC() {
+    }
 
     private String jmeno;
     private String Popis;

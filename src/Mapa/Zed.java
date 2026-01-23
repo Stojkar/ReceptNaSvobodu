@@ -1,12 +1,21 @@
 package Mapa;
 
 import Pribeh.Konec;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Zed {
 
     private String id;
     private boolean pruchodnost;
+    @JsonIdentityReference(alwaysAsId = true)
     private Mistnost mistnost1;
+    @JsonIdentityReference(alwaysAsId = true)
     private Mistnost mistnost2;
     private Konec konec;
     private int sila;
@@ -14,7 +23,8 @@ public class Zed {
     private String popis;
 
 
-
+    public Zed() {
+    }
 
     public void znicitZed(){
 
@@ -37,7 +47,79 @@ public class Zed {
     }
 
 
+    @Override
+    public String toString() {
+        return "Zed{" +
+                "nezev='" + id + '\'' +
+                ", pruchodnost=" + pruchodnost +
+                ", konec=" + konec +
+                ", sila=" + sila +
+                ", jeVentilace=" + jeVentilace +
+                ", popis='" + popis + '\'' +
+                '}';
+    }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public boolean isPruchodnost() {
+        return pruchodnost;
+    }
+
+    public void setPruchodnost(boolean pruchodnost) {
+        this.pruchodnost = pruchodnost;
+    }
+
+    public Mistnost getMistnost1() {
+        return mistnost1;
+    }
+
+    public void setMistnost1(Mistnost mistnost1) {
+        this.mistnost1 = mistnost1;
+    }
+
+    public Mistnost getMistnost2() {
+        return mistnost2;
+    }
+
+    public void setMistnost2(Mistnost mistnost2) {
+        this.mistnost2 = mistnost2;
+    }
+
+    public Konec getKonec() {
+        return konec;
+    }
+
+    public void setKonec(Konec konec) {
+        this.konec = konec;
+    }
+
+    public int getSila() {
+        return sila;
+    }
+
+    public void setSila(int sila) {
+        this.sila = sila;
+    }
+
+    public boolean isJeVentilace() {
+        return jeVentilace;
+    }
+
+    public void setJeVentilace(boolean jeVentilace) {
+        this.jeVentilace = jeVentilace;
+    }
+
+    public String getPopis() {
+        return popis;
+    }
+
+    public void setPopis(String popis) {
+        this.popis = popis;
+    }
 }

@@ -21,6 +21,8 @@ public class Predmet {
     private boolean nicetelnost;
 
 
+    public Predmet() {
+    }
 
     public Predmet(String nazev, String popis) {
         this.nazev = nazev;
