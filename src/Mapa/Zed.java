@@ -32,7 +32,11 @@ public class Zed {
 
 
     public Mistnost getDruhouMistnost(Mistnost mistnostKdeStoji){
-        return null;
+        if(mistnostKdeStoji.equals(mistnost1)){
+            return mistnost2;
+        }else{
+            return mistnost1;
+        }
     }
 
 

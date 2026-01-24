@@ -5,6 +5,8 @@ public class Main {
         Hra hra = new Hra();
         hra.test();
         System.out.println(hra);
+        hra.getHrac().posun("zapad");
+        System.out.println(hra.getHrac());
 
 
     }

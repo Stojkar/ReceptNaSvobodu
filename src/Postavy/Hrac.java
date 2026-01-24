@@ -1,5 +1,6 @@
 package Postavy;
 import Mapa.Mistnost;
+import Mapa.Zed;
 import Predmety.Inventar;
 import Predmety.Predmet;
 
@@ -14,7 +15,40 @@ public class Hrac {
 
 
     public Mistnost posun(String smer){
-        return null;
+        Zed zedPosunu = new Zed();
+
+        switch(smer){
+            case "sever":
+                zedPosunu = AktMistnost.getSeverZed();
+                break;
+            case "jih":
+                zedPosunu = AktMistnost.getJizniZed();
+                break;
+            case "vychod":
+                zedPosunu = AktMistnost.getVychodniZed();
+                break;
+            case "zapad":
+                zedPosunu = AktMistnost.getZapadniZed();
+                break;
+            default:
+                //TODO
+                System.out.println("chyba ve smeru");
+                break;
+        }
+        if(zedPosunu.getDruhouMistnost(AktMistnost) == null){
+            //TODO
+            System.out.println("jsi na okraji");
+            return AktMistnost;
+        }
+
+        if(zedPosunu.isPruchodnost()){
+            AktMistnost = zedPosunu.getDruhouMistnost(AktMistnost);
+        }else{
+            //TODO
+            System.out.println("zed je ted pro tebe nepruchodna");
+        }
+
+        return AktMistnost;
     }
 
     public Predmet pouzij(Predmet predmet){
@@ -35,7 +69,7 @@ public class Hrac {
 
     public Hrac(Mistnost aktMistnost, int maxPredmetu) {
         AktMistnost = aktMistnost;
-        this.inventar = inventar = new Inventar(maxPredmetu);
+        this.inventar = new Inventar(maxPredmetu);
     }
 
     @Override

@@ -246,21 +246,21 @@
             "id": "zed-sprchy-tvojecela",
             "mistnost1": "sprchy",
             "mistnost2": "tvojecela",
-            "pruchodnost": true,
-            "sila": 0,
+            "pruchodnost": false,
+            "sila": 1,
             "jeVentilace": false,
             "konec": null,
-            "popis": "Normální dveře"
+            "popis": "Špinavá zeď v tvé cele"
         },
         {
             "id": "zed-tvojecela-venkovniposilovna",
             "mistnost1": "tvojecela",
             "mistnost2": "venkovniposilovna",
-            "pruchodnost": true,
-            "sila": 0,
-            "jeVentilace": false,
+            "pruchodnost": false,
+            "sila": 2,
+            "jeVentilace": true,
             "konec": null,
-            "popis": "Normální dveře"
+            "popis": "Normální zeď v ventilací se šroubky"
         },
         {
             "id": "zed-sprchy-kancelarsefa",
