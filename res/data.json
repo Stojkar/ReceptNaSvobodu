@@ -16,7 +16,7 @@
             "id": "jidelna",
             "nazev": "Jídelna",
             "popis": "Velká místnost se stoly plnými špinavého nádobí. Na stěně visí olejový obraz.",
-            "severZed": "zed-ventilace-jidelna-trezorbanky",
+            "severZed": "zed-jidelna-trezorbanky",
             "vychodniZed": "zed-jidelna-skladszbraněmi",
             "zapadniZed": "zed-jidelna-dalsicely",
             "jizniZed": "zed-jidelna-hlavnichodba",
@@ -154,7 +154,7 @@
             "severZed": "zed-vnější-trezor-sever",
             "vychodniZed": "zed-vnější-trezor-vychod",
             "zapadniZed": "zed-vnější-trezor-zapad",
-            "jizniZed": "zed-ventilace-jidelna-trezorbanky",
+            "jizniZed": "zed-jidelna-trezorbanky",
             "predmetyMistnosti": [
 
             ],
@@ -205,7 +205,7 @@
         {
           "id": "zed-hlavnichodba-sprchy",
           "mistnost1": "hlavnicchodba",
-          "mistnost2": "chodbadocel",
+          "mistnost2": "sprchy",
           "pruchodnost": true,
           "sila": 0,
           "jeVentilace": false,
@@ -345,15 +345,13 @@
             "popis": "Těžká zeď"
         },
         {
-            "id": "zed-ventilace-jidelna-trezorbanky",
+            "id": "zed-jidelna-trezorbanky",
             "mistnost1": "jidelna",
             "mistnost2": "trezorbanky",
-            "pruchodnost": true,
-            "sila": 0,
-            "jeVentilace": true,
-            "konec": {
-                "nazev": "cestaexploze"
-            },
+            "pruchodnost": false,
+            "sila": 10,
+            "jeVentilace": false,
+            "konec": null,
             "popis": "Ventilační šachta k trezoru banky"
         },
         {

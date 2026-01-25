@@ -7,7 +7,7 @@ public class Pomoc implements Command {
     }
 
     @Override
-    public String execute() {
+    public String execute(String smer) {
         return "";
     }
 }

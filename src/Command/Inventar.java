@@ -2,7 +2,7 @@ package Command;
 
 public class Inventar implements Command {
     @Override
-    public String execute() {
+    public String execute(String smer) {
         return "";
     }
 

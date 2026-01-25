@@ -26,13 +26,21 @@ public class Hra {
 
         DataHry data = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("data.json"));
         hrac = new Hrac(data.getMistosti().getFirst(),5);
-
+        ConsoleApp console = new ConsoleApp(hrac);
+        console.start();
 
     }
 
     public Hrac getHrac() {
         return hrac;
     }
+
+
+
+
+
+
+
 
 
     @Override
