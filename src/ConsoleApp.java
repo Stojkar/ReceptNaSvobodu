@@ -1,5 +1,6 @@
 import Command.Command;
 import Command.Pohyb;
+import Command.Seber;
 import Postavy.Hrac;
 
 import java.util.HashMap;
@@ -22,6 +23,7 @@ public class ConsoleApp {
 
     public void inicializace(){
         commands.put("jdi", new Pohyb(hrac));
+        commands.put("seber", new Seber(hrac));
     }
 
     public void execude(){

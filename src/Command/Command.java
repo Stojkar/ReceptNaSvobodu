@@ -2,7 +2,7 @@ package Command;
 
 public interface Command {
 
-    String execute(String smer);
+    String execute(String prikaz);
 
     boolean exit();
 

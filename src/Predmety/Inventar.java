@@ -15,7 +15,8 @@ public class Inventar {
     }
 
     public Predmet pridatPredmet(Predmet predmet) {
-        return null;
+        predmety.add(predmet);
+        return predmet;
     }
 
     public boolean odebratPredmet(Predmet predmet) {
@@ -26,5 +27,10 @@ public class Inventar {
     public Inventar(int maxPredmetu) {
         this.predmety = new  ArrayList<>();
         this.maxPredmetu = maxPredmetu;
+    }
+
+    @Override
+    public String toString() {
+        return "Inventar = " + predmety;
     }
 }

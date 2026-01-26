@@ -18,7 +18,7 @@ public class Predmet {
     private String popis;
     private SpecialniSchopnost schopnost;
     private int sila;
-    private boolean nicetelnost;
+    private boolean nicitelnost;
 
 
     public Predmet() {
@@ -42,7 +42,47 @@ public class Predmet {
                 ", popis='" + popis + '\'' +
                 ", schopnost=" + schopnost +
                 ", sila=" + sila +
-                ", nicetelnost=" + nicetelnost +
+                ", nicetelnost=" + nicitelnost +
                 '}';
+    }
+
+    public String getNazev() {
+        return nazev;
+    }
+
+    public void setNazev(String nazev) {
+        this.nazev = nazev;
+    }
+
+    public String getPopis() {
+        return popis;
+    }
+
+    public void setPopis(String popis) {
+        this.popis = popis;
+    }
+
+    public SpecialniSchopnost getSchopnost() {
+        return schopnost;
+    }
+
+    public void setSchopnost(SpecialniSchopnost schopnost) {
+        this.schopnost = schopnost;
+    }
+
+    public int getSila() {
+        return sila;
+    }
+
+    public void setSila(int sila) {
+        this.sila = sila;
+    }
+
+    public boolean isNicitelnost() {
+        return nicitelnost;
+    }
+
+    public void setNicitelnost(boolean niceitelnost) {
+        this.nicitelnost = nicitelnost;
     }
 }

@@ -20,9 +20,7 @@
             "vychodniZed": "zed-jidelna-skladszbraněmi",
             "zapadniZed": "zed-jidelna-dalsicely",
             "jizniZed": "zed-jidelna-hlavnichodba",
-            "predmetyMistnosti": [
-
-            ],
+            "predmetyMistnosti": [],
             "mistnostiNPC": []
         },
         {
@@ -46,7 +44,15 @@
             "vychodniZed": "zed-dalsicely-dilsnaradim",
             "zapadniZed": "zed-vnější-zapad-dilsnaradim",
             "jizniZed": "zed-dilsnaradim-dvorekprovezne",
-            "predmetyMistnosti": [],
+            "predmetyMistnosti": [
+              {
+                "nazev": "krumpac",
+                "popis": "Ošuntělí krumpáč využívaný na vězeňskou práci na dvorku",
+                "schopnost": "MUZE_NICIT_ZDI",
+                "sila": 3,
+                "nicitelnost": false
+              }
+            ],
             "mistnostiNPC": []
         },
         {

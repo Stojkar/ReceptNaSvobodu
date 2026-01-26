@@ -43,7 +43,13 @@ public class Mistnost {
         return false;
     }
 
-    public boolean odeberiPredmet(Predmet predmet) {
+    public boolean odberPredmet(String nazPredmet) {
+        for (Predmet predmet : predmetyMistnosti) {
+            if (predmet.getNazev().equals(nazPredmet)) {
+                predmetyMistnosti.remove(predmet);
+                return true;
+            }
+        }
         return false;
     }
 

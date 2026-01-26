@@ -30,25 +30,27 @@ public class Hrac {
             case "zapad":
                 zedPosunu = AktMistnost.getZapadniZed();
                 break;
-            default:
-                //TODO
-                System.out.println("chyba ve smeru");
-                break;
         }
         if(zedPosunu.getDruhouMistnost(AktMistnost) == null){
-            //TODO
-            System.out.println("jsi na okraji");
             return AktMistnost;
         }
 
         if(zedPosunu.isPruchodnost()){
             AktMistnost = zedPosunu.getDruhouMistnost(AktMistnost);
-        }else{
-            //TODO
-            System.out.println("zed je ted pro tebe nepruchodna");
         }
 
         return AktMistnost;
+    }
+
+    public Inventar pridej(String predmet){
+        Predmet sbiPredmet;
+        for(Predmet mistPredmet: AktMistnost.getPredmetyMistnosti()){
+            if(mistPredmet.getNazev().equals(predmet)){
+                sbiPredmet = mistPredmet;
+            }
+            inventar.pridatPredmet(mistPredmet);
+        }
+        return inventar;
     }
 
     public Predmet pouzij(Predmet predmet){
@@ -77,5 +79,37 @@ public class Hrac {
         return "Hrac{" +
                 "AktMistnost=" + AktMistnost +
                 '}';
+    }
+
+    public Inventar getInventar() {
+        return inventar;
+    }
+
+    public void setInventar(Inventar inventar) {
+        this.inventar = inventar;
+    }
+
+    public Mistnost getAktMistnost() {
+        return AktMistnost;
+    }
+
+    public void setAktMistnost(Mistnost aktMistnost) {
+        AktMistnost = aktMistnost;
+    }
+
+    public boolean isMapaBitelostiZdi() {
+        return mapaBitelostiZdi;
+    }
+
+    public void setMapaBitelostiZdi(boolean mapaBitelostiZdi) {
+        this.mapaBitelostiZdi = mapaBitelostiZdi;
+    }
+
+    public boolean isMapaVentilaci() {
+        return mapaVentilaci;
+    }
+
+    public void setMapaVentilaci(boolean mapaVentilaci) {
+        this.mapaVentilaci = mapaVentilaci;
     }
 }
