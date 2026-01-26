@@ -1,6 +1,7 @@
 import Command.Command;
 import Command.Pohyb;
 import Command.Seber;
+import Command.Pomoc;
 import Postavy.Hrac;
 
 import java.util.HashMap;
@@ -24,6 +25,7 @@ public class ConsoleApp {
     public void inicializace(){
         commands.put("jdi", new Pohyb(hrac));
         commands.put("seber", new Seber(hrac));
+        commands.put("pomoc", new Pomoc());
     }
 
     public void execude(){
@@ -41,7 +43,7 @@ public class ConsoleApp {
             jeKonec = commands.get(prikaz).exit();
 
         }else {
-            System.out.println("Command not found!");
+            System.out.println("Prikaz nenexistuje!");
         }
     }
 

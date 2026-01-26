@@ -9,6 +9,7 @@ public class Pomoc implements Command {
     @Override
     public String execute(String smer) {
         return "Prikazy ktere muzes provast:" +
-                "jdi smer";
+                "jdi smer" +
+                "seber predmet";
     }
 }
