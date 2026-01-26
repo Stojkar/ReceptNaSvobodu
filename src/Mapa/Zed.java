@@ -11,6 +11,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 )
 public class Zed {
 
+
+    public enum SpecialniVlastnost {
+        JE_VENTILACE,
+        JSOU_MRIZE
+    }
+
     private String id;
     private boolean pruchodnost;
     @JsonIdentityReference(alwaysAsId = true)
@@ -19,7 +25,7 @@ public class Zed {
     private Mistnost mistnost2;
     private Konec konec;
     private int sila;
-    private boolean jeVentilace;
+    private SpecialniVlastnost spVlastnost;
     private String popis;
 
 
@@ -58,7 +64,7 @@ public class Zed {
                 ", pruchodnost=" + pruchodnost +
                 ", konec=" + konec +
                 ", sila=" + sila +
-                ", jeVentilace=" + jeVentilace +
+                ", Vlastnost=" + spVlastnost +
                 ", popis='" + popis + '\'' +
                 '}';
     }
@@ -111,12 +117,12 @@ public class Zed {
         this.sila = sila;
     }
 
-    public boolean isJeVentilace() {
-        return jeVentilace;
+    public SpecialniVlastnost getspVlastnost() {
+        return spVlastnost;
     }
 
-    public void setJeVentilace(boolean jeVentilace) {
-        this.jeVentilace = jeVentilace;
+    public void setSpVlastnost(SpecialniVlastnost spVlastnost) {
+        this.spVlastnost = spVlastnost;
     }
 
     public String getPopis() {

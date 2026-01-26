@@ -16,8 +16,7 @@ public class Pohyb implements Command{
     @Override
     public String execute(String smer) {
         Mistnost mistnost = hrac.posun(smer);
-        String m = mistnost.toString();
-        return m;
+        return mistnost.toString();
     }
 
     @Override

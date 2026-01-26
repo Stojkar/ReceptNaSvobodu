@@ -168,7 +168,7 @@
             "mistnost2": "hlavnicchodba",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře mezi Jídelnou a Hlavní chodbou"
         },
@@ -178,7 +178,7 @@
             "mistnost2": "dalsicely",
             "pruchodnost": false,
             "sila": 1,
-            "jeVentilace": false,
+            "spVlastnost": "JE_VENTILACE",
             "konec": null,
             "popis": "Zničitelná klíčem a krumpáčem"
         },
@@ -188,7 +188,7 @@
             "mistnost2": "hlavnicchodba",
             "pruchodnost": false,
             "sila": 2,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Zničitelná krumpáčem"
         },
@@ -198,7 +198,7 @@
             "mistnost2": "dilsnaradim",
             "pruchodnost": false,
             "sila": 1,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Zničitelná klíčem a krumpáčem"
         },
@@ -208,7 +208,7 @@
           "mistnost2": "sprchy",
           "pruchodnost": true,
           "sila": 0,
-          "jeVentilace": false,
+          "spVlastnost": null,
           "konec": null,
           "popis": "Normální dveře"
           },
@@ -218,7 +218,7 @@
             "mistnost2": "chodbadocel",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -228,7 +228,7 @@
             "mistnost2": "dvorekprovezne",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -238,7 +238,7 @@
             "mistnost2": "velin",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -248,7 +248,7 @@
             "mistnost2": "tvojecela",
             "pruchodnost": false,
             "sila": 1,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Špinavá zeď v tvé cele"
         },
@@ -258,7 +258,7 @@
             "mistnost2": "venkovniposilovna",
             "pruchodnost": false,
             "sila": 2,
-            "jeVentilace": true,
+            "spVlastnost": "JE_VENTILACE",
             "konec": null,
             "popis": "Normální zeď v ventilací se šroubky"
         },
@@ -268,7 +268,7 @@
             "mistnost2": "kancelarsefa",
             "pruchodnost": false,
             "sila": 1,
-            "jeVentilace": false,
+            "spVlastnost": "JE_VENTILACE",
             "konec": null,
             "popis": "Zničitelná klíčem a krumpáčem"
         },
@@ -278,7 +278,7 @@
             "mistnost2": "chodbadocel",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -288,7 +288,7 @@
             "mistnost2": "tvojecela",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -298,7 +298,7 @@
             "mistnost2": "dvorekprovezne",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -308,7 +308,7 @@
             "mistnost2": "venkovniposilovna",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": "JSOU_MRIZE",
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -318,7 +318,7 @@
             "mistnost2": "kancelarsefa",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
@@ -328,7 +328,7 @@
             "mistnost2": "velin",
             "pruchodnost": true,
             "sila": 0,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": {
                 "nazev": "cestanasili"
             },
@@ -340,7 +340,7 @@
             "mistnost2": "skladszbraněmi",
             "pruchodnost": false,
             "sila": 2,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Těžká zeď"
         },
@@ -350,7 +350,7 @@
             "mistnost2": "trezorbanky",
             "pruchodnost": false,
             "sila": 10,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Ventilační šachta k trezoru banky"
         },
@@ -360,7 +360,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -370,7 +370,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -380,7 +380,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -390,7 +390,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -400,7 +400,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -410,7 +410,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -420,7 +420,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -430,7 +430,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -440,7 +440,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -450,7 +450,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -460,7 +460,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -470,7 +470,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -480,7 +480,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -490,7 +490,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď trezoru - nezničitelná"
         },
@@ -500,7 +500,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď trezoru - nezničitelná"
         },
@@ -510,7 +510,7 @@
             "mistnost2": null,
             "pruchodnost": false,
             "sila": 20,
-            "jeVentilace": false,
+            "spVlastnost": null,
             "konec": null,
             "popis": "Vnější zeď trezoru - nezničitelná"
         }
