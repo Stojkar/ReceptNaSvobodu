@@ -1,3 +1,5 @@
+import Predmety.Predmet;
+
 import java.util.Arrays;
 
 public class Main {

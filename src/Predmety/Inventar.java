@@ -14,9 +14,11 @@ public class Inventar {
         return null;
     }
 
-    public Predmet pridatPredmet(Predmet predmet) {
-        predmety.add(predmet);
-        return predmet;
+    public boolean pridatPredmet(Predmet predmet) {
+        if(predmet==null){
+            return false;
+        }
+        return predmety.add(predmet);
     }
 
     public boolean odebratPredmet(Predmet predmet) {
@@ -32,5 +34,21 @@ public class Inventar {
     @Override
     public String toString() {
         return "Inventar = " + predmety;
+    }
+
+    public ArrayList<Predmet> getPredmety() {
+        return predmety;
+    }
+
+    public void setPredmety(ArrayList<Predmet> predmety) {
+        this.predmety = predmety;
+    }
+
+    public int getMaxPredmetu() {
+        return maxPredmetu;
+    }
+
+    public void setMaxPredmetu(int maxPredmetu) {
+        this.maxPredmetu = maxPredmetu;
     }
 }

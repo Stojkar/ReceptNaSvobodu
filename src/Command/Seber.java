@@ -1,6 +1,5 @@
 package Command;
 
-import Predmety.Inventar;
 import Predmety.Predmet;
 import Postavy.Hrac;
 
@@ -9,9 +8,10 @@ public class Seber implements Command {
     Hrac hrac;
     @Override
     public String execute(String predmet) {
-        Inventar inventar = hrac.pridej(predmet);
-        if(hrac.getAktMistnost().odberPredmet(predmet)){
-            return inventar.toString();
+        Predmet p = hrac.najdiPredmetMistnost(predmet);
+        if(hrac.InventarPridat(p)){
+            hrac.getAktMistnost().odberPredmet(predmet);
+            return "Seberal jsi predmet " + p.toString();
         }
         return "V této místnosti není žádný předmět " + predmet;
     }

@@ -2,6 +2,8 @@ import Command.Command;
 import Command.Pohyb;
 import Command.Seber;
 import Command.Pomoc;
+import Command.Pouzij;
+import Command.Inventar;
 import Postavy.Hrac;
 
 import java.util.HashMap;
@@ -26,21 +28,19 @@ public class ConsoleApp {
         commands.put("jdi", new Pohyb(hrac));
         commands.put("seber", new Seber(hrac));
         commands.put("pomoc", new Pomoc());
+        commands.put("pouzij", new Pouzij(hrac));
+        commands.put("inventar", new Inventar(hrac));
     }
 
     public void execude(){
         System.out.print(">>> ");
-        String prikaz = scanner.next();
+        String prikaz = scanner.nextLine();
         prikaz = prikaz.trim().toLowerCase();
+        String[] prikazy = prikaz.split(" ",2);
 
-        String smer = scanner.next();
-        smer = smer.trim().toLowerCase();
-
-
-
-        if(commands.containsKey(prikaz)){
-            System.out.println(commands.get(prikaz).execute(smer));
-            jeKonec = commands.get(prikaz).exit();
+        if(commands.containsKey(prikazy[0])){
+            System.out.println(commands.get(prikazy[0]).execute(prikazy[1]));
+            jeKonec = commands.get(prikazy[0]).exit();
 
         }else {
             System.out.println("Prikaz nenexistuje!");

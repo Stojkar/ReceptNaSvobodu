@@ -43,6 +43,69 @@ public class Mistnost {
         return false;
     }
 
+    public Zed zedPodleSmeru(String smer){
+        Zed zed;
+        return switch (smer) {
+            case "sever" -> {
+                zed = severZed;
+                yield zed;
+            }
+            case "vychod" -> {
+                zed = vychodniZed;
+                yield zed;
+            }
+            case "zapad" -> {
+                zed = zapadniZed;
+                yield zed;
+            }
+            case "jih" -> {
+                zed = jizniZed;
+                yield zed;
+            }
+            default -> null;
+        };
+    }
+
+    public boolean srouboVentilace(String smer){
+        Zed zed = zedPodleSmeru(smer);
+        if(zed == null){
+            return false;
+        }
+        if(zed.getspVlastnost() == Zed.SpecialniVlastnost.JE_VENTILACE){
+            zed.setPruchodnost(true);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean pilovatMrize(String smer){
+        Zed zed = zedPodleSmeru(smer);
+        if(zed == null){
+            return false;
+        }
+        if(zed.getspVlastnost() == Zed.SpecialniVlastnost.JSOU_MRIZE){
+            zed.setPruchodnost(true);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean znicZed(int sila, String smer){
+        Zed zed = zedPodleSmeru(smer);
+        if(zed == null){
+            System.out.println("zed je null");
+            return false;
+        }
+        if(zed.getSila() <= sila){
+            zed.setSila(0);
+            zed.setPruchodnost(true);
+            System.out.println("zed neni sila");
+            return true;
+        }
+        System.out.println("zed je sila");
+        return false;
+    }
+
     public boolean odberPredmet(String nazPredmet) {
         for (Predmet predmet : predmetyMistnosti) {
             if (predmet.getNazev().equals(nazPredmet)) {

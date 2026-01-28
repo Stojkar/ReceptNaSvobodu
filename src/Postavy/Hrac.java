@@ -15,7 +15,7 @@ public class Hrac {
 
 
     public Mistnost posun(String smer){
-        Zed zedPosunu = new Zed();
+        Zed zedPosunu;
 
         switch(smer){
             case "sever":
@@ -30,6 +30,8 @@ public class Hrac {
             case "zapad":
                 zedPosunu = AktMistnost.getZapadniZed();
                 break;
+            default:
+                zedPosunu = null;
         }
         if(zedPosunu.getDruhouMistnost(AktMistnost) == null){
             return AktMistnost;
@@ -42,16 +44,29 @@ public class Hrac {
         return AktMistnost;
     }
 
-    public Inventar pridej(String predmet){
-        Predmet sbiPredmet;
-        for(Predmet mistPredmet: AktMistnost.getPredmetyMistnosti()){
-            if(mistPredmet.getNazev().equals(predmet)){
-                sbiPredmet = mistPredmet;
+    public Predmet najdiPredmetMistnost(String predmet){
+        for(Predmet mistPredmet: AktMistnost.getPredmetyMistnosti()) {
+            if (mistPredmet.getNazev().equals(predmet)) {
+                return mistPredmet;
             }
-            inventar.pridatPredmet(mistPredmet);
         }
-        return inventar;
+        return null;
     }
+
+
+    public Predmet najdiPredmetInventar(String predmet){
+        for(Predmet mistPredmet: inventar.getPredmety()) {
+            if (mistPredmet.getNazev().equals(predmet)) {
+                return mistPredmet;
+            }
+        }
+        return null;
+    }
+
+    public boolean InventarPridat(Predmet predmet){
+        return inventar.pridatPredmet(predmet);
+    }
+
 
     public Predmet pouzij(Predmet predmet){
         return null;

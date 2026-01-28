@@ -24,15 +24,21 @@ public class Predmet {
     public Predmet() {
     }
 
-    public Predmet(String nazev, String popis) {
+    public Predmet(String nazev, String popis, SpecialniSchopnost schopnost, int sila, boolean nicitelnost) {
         this.nazev = nazev;
         this.popis = popis;
+        this.schopnost = schopnost;
+        this.sila = sila;
+        this.nicitelnost = nicitelnost;
     }
 
 
     public String vypisPopisu(){
         return null;
     }
+
+
+
 
 
     @Override

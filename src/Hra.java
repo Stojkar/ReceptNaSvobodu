@@ -1,4 +1,5 @@
 import Postavy.Hrac;
+import Predmety.Predmet;
 import Pribeh.Uvod;
 
 
@@ -32,10 +33,6 @@ public class Hra {
     public Hrac getHrac() {
         return hrac;
     }
-
-
-
-
 
 
 

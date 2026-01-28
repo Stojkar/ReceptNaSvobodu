@@ -20,7 +20,15 @@
             "vychodniZed": "zed-jidelna-skladszbraněmi",
             "zapadniZed": "zed-jidelna-dalsicely",
             "jizniZed": "zed-jidelna-hlavnichodba",
-            "predmetyMistnosti": [],
+            "predmetyMistnosti": [
+              {
+                "nazev": "lzice",
+                "popis": "Plastová lžíce ale s dostatečně ostrou hranou pro pár odšroubovaní šroubků",
+                "schopnost": "MUZE_SROUBOVAT",
+                "sila": 0,
+                "nicitelnost": true
+              }
+            ],
             "mistnostiNPC": []
         },
         {
@@ -63,7 +71,12 @@
             "vychodniZed": "zed-vnější-vychod-skladszbraněmi",
             "zapadniZed": "zed-jidelna-skladszbraněmi",
             "jizniZed": "zed-skladszbraněmi-velin",
-            "predmetyMistnosti": [],
+            "predmetyMistnosti": [
+              {
+                "nazev": "arzenal",
+
+              }
+            ],
             "mistnostiNPC": []
         },
         {
@@ -123,7 +136,13 @@
             "zapadniZed": "zed-sprchy-tvojecela",
             "jizniZed": "zed-vnější-jih-sprchy",
             "predmetyMistnosti": [
-
+              {
+                "nazev": "mydlovponozce",
+                "popis": "Mýdlo v tvé ponožce",
+                "schopnost": "MUZE_BOJOVAT",
+                "sila": 2,
+                "nicitelnost": true
+              }
             ],
             "mistnostiNPC": []
         },
