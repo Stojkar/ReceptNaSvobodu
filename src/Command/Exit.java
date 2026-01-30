@@ -3,7 +3,7 @@ package Command;
 public class Exit implements Command{
     @Override
     public String execute(String smer) {
-        return "";
+        return "Spáchal jsi sebevraždu";
     }
 
     @Override

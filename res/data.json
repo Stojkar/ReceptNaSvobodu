@@ -1,5 +1,76 @@
 {
-    "predmety": [],
+    "predmety": [
+      {
+        "nazev": "Kladivo",
+        "popis": "Nástroj, kterým se dají ničit lehké zdi (označené žlutou barvou). Umožňuje probourat se z cely do vedlejší cely a následně do jídelny.",
+        "schopnost": "MUZE_NICIT_ZDI",
+        "sila": 1,
+        "nicitelnost": false
+      },
+      {
+        "nazev": "Cigarety",
+        "popis": "Slouží jako platidlo pro získávání informací od ostatních vězňů. V kombinaci se zapalovačem zdvojnásobují útok.",
+        "schopnost": "MUZE_KOURIT",
+        "sila": 0,
+        "nicitelnost": true
+      },
+      {
+        "nazev": "Pilník",
+        "popis": "Nástroj k přeřezání mříží. Je nezbytný k otevírání cel ostatních vězňů a získání přístupu k nim.",
+        "schopnost": "MUZE_PILOVAT",
+        "sila": 0,
+        "nicitelnost": false
+      },
+      {
+        "nazev": "Teleportér",
+        "popis": "Dává hráči možnost se náhodně teleportovat na jakékoliv místo ve vězení. Únik se stává otázkou štěstí.",
+        "schopnost": "MUZE_TELEPORTOVAT",
+        "sila": 0,
+        "nicitelnost": false
+      },
+      {
+        "nazev": "Pistole",
+        "popis": "Extrémně silný předmět. Umožňuje vzít ředitele jako rukojmí a projít s ním na svobodu. Střelba přiláká pozornost.",
+        "schopnost": "MUZE_BOJOVAT",
+        "sila": 10,
+        "nicitelnost": false
+      },
+      {
+        "nazev": "Dynamit",
+        "popis": "Silná výbušnina nutná k proražení zdi do trezoru banky (fialová zeď). K použití vyžaduje zapalovač.",
+        "schopnost": "MUZE_NICIT_ZDI",
+        "sila": 100,
+        "nicitelnost": true
+      },
+      {
+        "nazev": "Zapalovač",
+        "popis": "Nezbytný pro odpálení dynamitu. V kombinaci s cigaretami poskytuje bojový bonus (zdvojnásobení útoku).",
+        "schopnost": "MUZE_ZAPALOVAT",
+        "sila": 0,
+        "nicitelnost": false
+      },
+      {
+        "nazev": "Šroubovák",
+        "popis": "Umožňuje otevírat ventilace a pohybovat se šachtami, čímž se hráč vyhne strážím. Pomáhá také při úniku z cely.",
+        "schopnost": "MUZE_SROUBOVAT",
+        "sila": 0,
+        "nicitelnost": false
+      },
+      {
+        "nazev": "Samurajský meč",
+        "popis": "Sečná zbraň s vysokou výdrží. Dokáže porazit až dva strážce bez poškození či zničení.",
+        "schopnost": "MUZE_BOJOVAT",
+        "sila": 2,
+        "nicitelnost": false
+      },
+      {
+        "nazev": "Taser",
+        "popis": "Zbraň na jedno použití s obrovským účinkem. Dokáže paralyzovat tři strážné najednou (např. v dílně).",
+        "schopnost": "MUZE_BOJOVAT",
+        "sila": 3,
+        "nicitelnost": true
+      }
+    ],
     "mistnosti": [
         {
             "id": "tvojecela",
@@ -9,7 +80,8 @@
             "vychodniZed": "zed-sprchy-tvojecela",
             "zapadniZed": "zed-tvojecela-venkovniposilovna",
             "jizniZed": "zed-vnější-jih-tvojecela",
-            "predmetyMistnosti": [],
+            "predmetyMistnosti": [
+            ],
             "mistnostiNPC": []
         },
         {
@@ -23,7 +95,7 @@
             "predmetyMistnosti": [
               {
                 "nazev": "lzice",
-                "popis": "Plastová lžíce ale s dostatečně ostrou hranou pro pár odšroubovaní šroubků",
+                "popis": "Plastová lžíce ale s dostatečně ostrou hranou pro odšroubovaní pár šroubků",
                 "schopnost": "MUZE_SROUBOVAT",
                 "sila": 0,
                 "nicitelnost": true
@@ -74,7 +146,10 @@
             "predmetyMistnosti": [
               {
                 "nazev": "arzenal",
-
+                "popis": "Silná palebná síla ktera tě dostane ven",
+                "schopnost": "MUZE_BOJOVAT",
+                "sila": 10,
+                "nicitelnost": false
               }
             ],
             "mistnostiNPC": []

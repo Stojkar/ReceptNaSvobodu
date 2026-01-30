@@ -4,6 +4,7 @@ import Command.Seber;
 import Command.Pomoc;
 import Command.Pouzij;
 import Command.Inventar;
+import Command.Exit;
 import Postavy.Hrac;
 
 import java.util.HashMap;
@@ -30,6 +31,7 @@ public class ConsoleApp {
         commands.put("pomoc", new Pomoc());
         commands.put("pouzij", new Pouzij(hrac));
         commands.put("inventar", new Inventar(hrac));
+        commands.put("sebevrazda", new Exit());
     }
 
     public void execude(){

@@ -15,7 +15,13 @@ public class Hra {
 
 
 
-    public void zacitUvod(){}
+    public void zacitUvod(){
+
+
+
+
+
+    }
 
 
     public void zacitHru(){}
