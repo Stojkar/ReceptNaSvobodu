@@ -1,7 +1,8 @@
 package Pribeh;
 
-public class Uvod {
+public class Volba {
 
+    private String cesta;
     private String popis;
     private int obtiznost;
 
@@ -9,7 +10,7 @@ public class Uvod {
         return null;
     }
 
-    public Uvod(String popis, int obtiznost) {
+    public Volba(String popis, int obtiznost) {
         this.popis = popis;
         this.obtiznost = obtiznost;
     }

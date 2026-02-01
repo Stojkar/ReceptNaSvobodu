@@ -80,8 +80,7 @@
             "vychodniZed": "zed-sprchy-tvojecela",
             "zapadniZed": "zed-tvojecela-venkovniposilovna",
             "jizniZed": "zed-vnější-jih-tvojecela",
-            "predmetyMistnosti": [
-            ],
+            "predmetyMistnosti": [],
             "mistnostiNPC": []
         },
         {
@@ -229,10 +228,14 @@
             "vychodniZed": "zed-tvojecela-venkovniposilovna",
             "zapadniZed": "zed-vnější-zapad-venkovniposilovna",
             "jizniZed": "zed-vnější-jih-venkovniposilovna",
-            "predmetyMistnosti": [
-
-            ],
-            "mistnostiNPC": []
+            "predmetyMistnosti": [],
+            "mistnostiNPC": [
+              {
+              "jmeno": "nasvalenec",
+              "dialog": "Něco za něco",
+              "akce": "VYMENA_PREDMETU"
+            }
+            ]
         },
         {
             "id": "kancelarsefa",

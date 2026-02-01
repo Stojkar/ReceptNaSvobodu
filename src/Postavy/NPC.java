@@ -1,7 +1,5 @@
 package Postavy;
 
-import Mapa.Mistnost;
-
 public class NPC {
 
     public enum AkcePostavy{
@@ -11,14 +9,37 @@ public class NPC {
         VYJEDNAVANI
     }
 
+    private String jmeno;
+    private String dialog;
+    private AkcePostavy akce;
+
     public NPC() {
     }
-
-    private String jmeno;
-    private String Popis;
-    AkcePostavy akce;
-
     public NPC(String jmeno) {
         this.jmeno = jmeno;
+    }
+
+    public String getJmeno() {
+        return jmeno;
+    }
+
+    public void setJmeno(String jmeno) {
+        this.jmeno = jmeno;
+    }
+
+    public String getDialog() {
+        return dialog;
+    }
+
+    public void setDialog(String dialog) {
+        this.dialog = dialog;
+    }
+
+    public AkcePostavy getAkce() {
+        return akce;
+    }
+
+    public void setAkce(AkcePostavy akce) {
+        this.akce = akce;
     }
 }

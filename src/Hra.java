@@ -1,12 +1,11 @@
 import Postavy.Hrac;
-import Predmety.Predmet;
-import Pribeh.Uvod;
+import Pribeh.Volba;
 
 
 public class Hra {
 
 
-    private Uvod uvod;
+    private Volba uvod;
     private Hrac hrac;
     private ConsoleApp console;
 

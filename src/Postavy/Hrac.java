@@ -63,6 +63,15 @@ public class Hrac {
         return null;
     }
 
+    public NPC najdiNpc(String npc){
+        //TODO
+        return null;
+    }
+
+    public void rozbaleniBalicku(int pocet){
+        //TODO
+    }
+
     public boolean InventarPridat(Predmet predmet){
         return inventar.pridatPredmet(predmet);
     }

@@ -12,12 +12,8 @@ public class Pouzij implements Command{
     public String execute(String prikaz) {
         String[] prikazy = prikaz.split(" ",2);
 
-        Predmet predmet = hrac.najdiPredmetInventar(prikazy[0]);
-        /*
-        if(predmet == null){
-            return "Nemáš žádný předmět " +  prikazy[0];
-        }
-         */
+        Predmet predmet =  hrac.najdiPredmetInventar(prikazy[0]);
+
 
         System.out.println(predmet.toString());
         switch(predmet.getSchopnost()){
@@ -35,20 +31,12 @@ public class Pouzij implements Command{
                 return "Ve zdi není ventilace";
             case MUZE_PILOVAT:
                 if(hrac.getAktMistnost().pilovatMrize(prikazy[1])){
+                    //TODO
                     hrac.InventarPridat(new Predmet("ZeleznaTyc","Ještě teplá od pilování", Predmet.SpecialniSchopnost.MUZE_BOJOVAT,2,true));
                     return "Povedlo se ti přepilovat mříže a v ruce ti zbyla tyč";
                 }
                 return "Ve zdi nejsou mříže";
         }
-
-        /*
-        switch(prikazy[1]){
-            case
-        }
-
-        */
-
-
         return "neco jsi pokazil";
     }
 
