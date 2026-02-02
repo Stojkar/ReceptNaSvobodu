@@ -16,6 +16,9 @@ public class Pohyb implements Command{
     @Override
     public String execute(String smer) {
         Mistnost mistnost = hrac.posun(smer);
+        if(mistnost == null){
+            return "Tento směr neexistuje";
+        }
         return mistnost.toString();
     }
 

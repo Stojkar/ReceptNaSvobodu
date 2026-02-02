@@ -130,17 +130,7 @@ public class Mistnost {
 
     @Override
     public String toString() {
-        return "Mistnost{" +
-                "id='" + id + '\'' +
-                ", nazev='" + nazev + '\'' +
-                ", popis='" + popis + '\'' +
-                ", predmetyMistnosti=" + predmetyMistnosti +
-                ", mistnostiNPC=" + mistnostiNPC +
-                ", severZed=" + severZed +
-                ", vychodniZed=" + vychodniZed +
-                ", zapadniZed=" + zapadniZed +
-                ", jizniZed=" + jizniZed +
-                '}';
+        return popis;
     }
 
     public Mistnost() {

@@ -31,7 +31,7 @@ public class ConsoleApp {
         commands.put("pomoc", new Pomoc());
         commands.put("pouzij", new Pouzij(hrac));
         commands.put("inventar", new Inventar(hrac));
-        commands.put("sebevrazda", new Exit());
+        commands.put("konec", new Exit());
     }
 
     public void execude(){
@@ -39,13 +39,20 @@ public class ConsoleApp {
         String prikaz = scanner.nextLine();
         prikaz = prikaz.trim().toLowerCase();
         String[] prikazy = prikaz.split(" ",2);
+        String datPrikazu = "";
+        if(prikazy.length==2){
+            datPrikazu =  prikazy[1];
+        }else{
+            datPrikazu = "nic";
+        }
+
 
         if(commands.containsKey(prikazy[0])){
-            System.out.println(commands.get(prikazy[0]).execute(prikazy[1]));
+            System.out.println(commands.get(prikazy[0]).execute(datPrikazu));
             jeKonec = commands.get(prikazy[0]).exit();
 
         }else {
-            System.out.println("Prikaz nenexistuje!");
+            System.out.println("Prikaz neeexistuje!");
         }
     }
 

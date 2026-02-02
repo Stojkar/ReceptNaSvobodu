@@ -14,6 +14,10 @@ public class Pouzij implements Command{
 
         Predmet predmet =  hrac.najdiPredmetInventar(prikazy[0]);
 
+        if(predmet == null){
+            return "Nemáš žádný předmět " + prikazy[2];
+        }
+
 
         System.out.println(predmet.toString());
         switch(predmet.getSchopnost()){

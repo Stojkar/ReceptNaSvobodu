@@ -43,13 +43,7 @@ public class Predmet {
 
     @Override
     public String toString() {
-        return "Predmet{" +
-                "nazev='" + nazev + '\'' +
-                ", popis='" + popis + '\'' +
-                ", schopnost=" + schopnost +
-                ", sila=" + sila +
-                ", nicetelnost=" + nicitelnost +
-                '}';
+        return popis;
     }
 
     public String getNazev() {
