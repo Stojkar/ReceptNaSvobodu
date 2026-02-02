@@ -53,6 +53,15 @@ public class Hrac {
         return null;
     }
 
+    public NPC najdiNPCMistnost(String npc){
+        for(NPC mistNPC: AktMistnost.getMistnostiNPC()){
+            if(mistNPC.getJmeno().equals(npc)){
+                return mistNPC;
+            }
+        }
+        return null;
+    }
+
 
     public Predmet najdiPredmetInventar(String predmet){
         for(Predmet mistPredmet: inventar.getPredmety()) {
