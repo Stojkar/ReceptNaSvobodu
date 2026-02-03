@@ -22,7 +22,10 @@ public class Inventar {
     }
 
     public boolean odebratPredmet(Predmet predmet) {
-        return false;
+        if(predmet==null){
+            return false;
+        }
+        return predmety.remove(predmet);
     }
 
 

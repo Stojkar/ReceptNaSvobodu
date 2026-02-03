@@ -25,18 +25,24 @@ public class Pouzij implements Command{
                 return "Nic to neudělalo, šetři tento předmět do boje";
             case MUZE_NICIT_ZDI:
                 if(hrac.getAktMistnost().znicZed(predmet.getSila(),prikazy[1])){
+                    if(hrac.moznaZnicit(predmet)){
+                        return "Zničil jsi zeď, ale zni4il si předmět";
+                    }
                     return "Zničil jsi zeď, cesta je průchodná";
                 }
                 return "zaď je moc silná na tento předmět";
             case MUZE_SROUBOVAT:
                 if(hrac.getAktMistnost().srouboVentilace(prikazy[1])){
+                    if(hrac.moznaZnicit(predmet)){
+                        return "Ventilace je odšroubovaná, ale zničil jsi předmět";
+                    }
                     return "Ventilace je odšroubovaná a máš volnou cestu";
                 }
                 return "Ve zdi není ventilace";
             case MUZE_PILOVAT:
                 if(hrac.getAktMistnost().pilovatMrize(prikazy[1])){
                     //TODO
-                    hrac.InventarPridat(new Predmet("ZeleznaTyc","Ještě teplá od pilování", Predmet.SpecialniSchopnost.MUZE_BOJOVAT,2,true));
+                    hrac.inventarPridat(new Predmet("ZeleznaTyc","Ještě teplá od pilování", Predmet.SpecialniSchopnost.MUZE_BOJOVAT,2,true));
                     return "Povedlo se ti přepilovat mříže a v ruce ti zbyla tyč";
                 }
                 return "Ve zdi nejsou mříže";

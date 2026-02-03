@@ -62,7 +62,7 @@ public class Hrac {
         return null;
     }
 
-    public NPC getNepriatelNPC() {
+    public NPC najdiNepriatelNPC() {
         for(NPC npc : AktMistnost.getMistnostiNPC()) {
             if(npc.getAkce() == NPC.AkcePostavy.BOJ) {
                 return npc;
@@ -81,6 +81,13 @@ public class Hrac {
         return null;
     }
 
+    public boolean moznaZnicit(Predmet predmet){
+        if(predmet.isNicitelnost()){
+            return inventar.odebratPredmet(predmet);
+        }
+        return false;
+    }
+
     public NPC najdiNpc(String npc){
         //TODO
         return null;
@@ -90,10 +97,13 @@ public class Hrac {
         //TODO
     }
 
-    public boolean InventarPridat(Predmet predmet){
+    public boolean inventarPridat(Predmet predmet){
         return inventar.pridatPredmet(predmet);
     }
 
+    public boolean invantarOdebrat(Predmet predmet){
+        return inventar.odebratPredmet(predmet);
+    }
 
     public Predmet pouzij(Predmet predmet){
         return null;

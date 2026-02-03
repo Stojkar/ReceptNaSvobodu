@@ -1,5 +1,9 @@
 package Postavy;
 
+import Predmety.Predmet;
+
+import java.util.ArrayList;
+
 public class NPC {
 
     public enum AkcePostavy{
@@ -12,6 +16,8 @@ public class NPC {
     private String jmeno;
     private String dialog;
     private AkcePostavy akce;
+    private int sila;
+    private Predmet predmeNPC;
 
     public NPC() {
     }
@@ -41,5 +47,21 @@ public class NPC {
 
     public void setAkce(AkcePostavy akce) {
         this.akce = akce;
+    }
+
+    public int getSila() {
+        return sila;
+    }
+
+    public void setSila(int sila) {
+        this.sila = sila;
+    }
+
+    public Predmet getPredmeNPC() {
+        return predmeNPC;
+    }
+
+    public void setPredmeNPC(Predmet predmeNPC) {
+        this.predmeNPC = predmeNPC;
     }
 }

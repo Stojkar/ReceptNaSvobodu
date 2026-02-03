@@ -9,7 +9,7 @@ public class Seber implements Command {
     @Override
     public String execute(String predmet) {
         Predmet p = hrac.najdiPredmetMistnost(predmet);
-        if(hrac.InventarPridat(p)){
+        if(hrac.inventarPridat(p)){
             hrac.getAktMistnost().odberPredmet(predmet);
             return "Seberal jsi predmet " + p.toString();
         }

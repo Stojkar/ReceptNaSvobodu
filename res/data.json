@@ -233,7 +233,8 @@
               {
               "jmeno": "nasvalenec",
               "dialog": "Něco za něco",
-              "akce": "VYMENA_PREDMETU"
+              "akce": "VYMENA_PREDMETU",
+              "sila": "1"
             }
             ]
         },

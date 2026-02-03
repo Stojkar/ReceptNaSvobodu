@@ -9,6 +9,9 @@ public class Dialog implements Command{
     @Override
     public String execute(String osoba) {
         NPC npc = hrac.najdiNPCMistnost(osoba);
+        if(npc == null){
+            return "Není tu žádná postava s jmenem " + osoba;
+        }
         return npc.getDialog();
     }
 
@@ -17,5 +20,7 @@ public class Dialog implements Command{
         return false;
     }
 
-
+    public Dialog(Hrac hrac) {
+        this.hrac = hrac;
+    }
 }
