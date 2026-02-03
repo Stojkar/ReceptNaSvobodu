@@ -62,6 +62,15 @@ public class Hrac {
         return null;
     }
 
+    public NPC getNepriatelNPC() {
+        for(NPC npc : AktMistnost.getMistnostiNPC()) {
+            if(npc.getAkce() == NPC.AkcePostavy.BOJ) {
+                return npc;
+            }
+        }
+        return null;
+    }
+
 
     public Predmet najdiPredmetInventar(String predmet){
         for(Predmet mistPredmet: inventar.getPredmety()) {

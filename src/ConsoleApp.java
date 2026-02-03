@@ -6,6 +6,7 @@ import Command.Pouzij;
 import Command.Inventar;
 import Command.Exit;
 import Postavy.Hrac;
+import Postavy.NPC;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -16,6 +17,8 @@ public class ConsoleApp {
     private HashMap<String, Command> commands;
     private boolean jeKonec;
     private Hrac hrac;
+    private boolean jeVBoji = false;
+
 
 
     public ConsoleApp(Hrac hrac) {
@@ -34,27 +37,40 @@ public class ConsoleApp {
         commands.put("konec", new Exit());
     }
 
-    public void execude(){
+    public void execude() {
         System.out.print(">>> ");
         String prikaz = scanner.nextLine();
         prikaz = prikaz.trim().toLowerCase();
-        String[] prikazy = prikaz.split(" ",2);
+        String[] prikazy = prikaz.split(" ", 2);
         String datPrikazu = "";
-        if(prikazy.length==2){
-            datPrikazu =  prikazy[1];
-        }else{
+
+        if (prikazy.length == 2) {
+            datPrikazu = prikazy[1];
+        } else {
             datPrikazu = "nic";
         }
 
+        if (hrac.getNepriatelNPC() != null) {
+            if (!jeVBoji) {
+                jeVBoji = true;
+                System.out.println("Pozor v místnosti je nepřítel " + hrac.getNepriatelNPC());
+            } else {
+                if (!prikazy[0].equals("zautoc")) {
+                    System.out.println("Byl jsi poražen a zbaven všech předmětů, které tě mohly dostat pryč!");                    jeKonec = true;
+                }
+            }
 
-        if(commands.containsKey(prikazy[0])){
-            System.out.println(commands.get(prikazy[0]).execute(datPrikazu));
-            jeKonec = commands.get(prikazy[0]).exit();
 
-        }else {
-            System.out.println("Prikaz neeexistuje!");
+            if (commands.containsKey(prikazy[0])) {
+                System.out.println(commands.get(prikazy[0]).execute(datPrikazu));
+                jeKonec = commands.get(prikazy[0]).exit();
+
+            } else {
+                System.out.println("Prikaz neexistuje!");
+            }
         }
     }
+
 
     public void start(){
         inicializace();
