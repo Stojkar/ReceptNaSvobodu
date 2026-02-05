@@ -3,6 +3,7 @@ import Mapa.Zed;
 import Postavy.NPC;
 import Predmety.Predmet;
 import Pribeh.Konec;
+import Pribeh.Volba;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
@@ -23,22 +24,24 @@ public class DataHry {
      */
 
 
-        public ArrayList<Predmet> predmety;
-        public ArrayList<Mistnost> mistnosti;
-        public ArrayList<Zed> zdi;
+    public ArrayList<Predmet> predmety;
+    public ArrayList<Mistnost> mistnosti;
+    public ArrayList<Zed> zdi;
+    public String uvodniText;
+    public ArrayList<Volba> volby;
 
 
 
-        public static DataHry loadGameDataFromResources(InputStream file) {
-            ObjectMapper mapper = new ObjectMapper();
+    public static DataHry loadGameDataFromResources(InputStream file) {
+        ObjectMapper mapper = new ObjectMapper();
 
-            try {
-                return mapper.readValue(file, DataHry.class);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
+        try {
+            return mapper.readValue(file, DataHry.class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
+    }
 
 
     public DataHry() {
@@ -49,13 +52,13 @@ public class DataHry {
     }
 
     @Override
-        public String toString() {
-            return "GameData{" +
-                    "predmety=" + predmety +
-                    ", mistosti=" + mistnosti +
-                    ", zdi=" + zdi +
-                    '}';
-        }
+    public String toString() {
+        return "GameData{" +
+                "predmety=" + predmety +
+                ", mistosti=" + mistnosti +
+                ", zdi=" + zdi +
+                '}';
+    }
 
     public ArrayList<Predmet> getPredmety() {
         return predmety;
@@ -79,6 +82,22 @@ public class DataHry {
 
     public void setZdi(ArrayList<Zed> zdi) {
         this.zdi = zdi;
+    }
+
+    public String getUvodniText() {
+        return uvodniText;
+    }
+
+    public void setUvodniText(String uvodniText) {
+        this.uvodniText = uvodniText;
+    }
+
+    public ArrayList<Volba> getVolby() {
+        return volby;
+    }
+
+    public void setVolby(ArrayList<Volba> volby) {
+        this.volby = volby;
     }
 
 }

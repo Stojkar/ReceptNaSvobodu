@@ -17,6 +17,11 @@ public class NPC {
     private int sila;
     private Predmet predmetNPC;
 
+    @Override
+    public String toString() {
+        return jmeno;
+    }
+
     public NPC() {
     }
     public NPC(String jmeno) {

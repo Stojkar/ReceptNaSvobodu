@@ -93,16 +93,13 @@ public class Mistnost {
     public boolean znicZed(int sila, String smer){
         Zed zed = zedPodleSmeru(smer);
         if(zed == null){
-            System.out.println("zed je null");
             return false;
         }
         if(zed.getSila() <= sila){
             zed.setSila(0);
             zed.setPruchodnost(true);
-            System.out.println("zed neni sila");
             return true;
         }
-        System.out.println("zed je sila");
         return false;
     }
 
@@ -130,7 +127,18 @@ public class Mistnost {
 
     @Override
     public String toString() {
-        return popis;
+        StringBuilder output = new StringBuilder();
+        output.append(popis);
+
+        for(NPC npc : mistnostiNPC){
+            if(npc.getAkce() == NPC.AkcePostavy.BOJ){
+                output.append("\n\nPozor! V místnosti je nepřítel ").append(npc.getJmeno()).append("!");
+                output.append("\nPřiprav se na boj!");
+                break;
+            }
+        }
+
+        return output.toString();
     }
 
     public Mistnost() {

@@ -1,0 +1,29 @@
+{
+  "uvodniText": "pribeh pekare",
+  "volby": [
+    {
+      "cesta": "poctivost",
+      "popis": "Zůstat poctivý",
+      "obtiznost": 0,
+      "pocetPredmetu": 0
+    },
+    {
+      "cesta": "klenotnictvi",
+      "popis": "Vykrást klenotnictví",
+      "obtiznost": 1,
+      "pocetPredmetu": 5
+    },
+    {
+      "cesta": "park",
+      "popis": "Vykrást zábavní park",
+      "obtiznost": 2,
+      "pocetPredmetu": 4
+    },
+    {
+      "cesta": "banka",
+      "popis": "Vykrást banku",
+      "obtiznost": 3,
+      "pocetPredmetu": 3
+    }
+  ]
+}
