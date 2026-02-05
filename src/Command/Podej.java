@@ -24,8 +24,8 @@ public class Podej implements Command {
             case VYMENA_PREDMETU ->
                 {
                     hrac.invantarOdebrat(predmet);
-                    hrac.inventarPridat(npc.getPredmeNPC());
-                    npc.setPredmeNPC(predmet);
+                    hrac.inventarPridat(npc.getPredmetNPC());
+                    npc.setPredmetNPC(predmet);
                     return "Výměna proběhla";
                 }
             case DAROVANI ->
