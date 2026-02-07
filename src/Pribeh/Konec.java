@@ -1,5 +1,7 @@
 package Pribeh;
 
+import Postavy.Hrac;
+
 public class Konec {
 
     private String nazev;
@@ -11,8 +13,8 @@ public class Konec {
         this.popis = popis;
     }
 
-    public String spustitKonec(){
-        return null;
+    public String spustitKonec(Hrac hrac) {
+        return "Koneccccccc";
     }
 
     public Konec() {

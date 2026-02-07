@@ -565,9 +565,7 @@
             "pruchodnost": true,
             "sila": 0,
             "spVlastnost": null,
-            "konec": {
-                "nazev": "cestanasili"
-            },
+            "konec": null,
             "popis": "Východ a výhra - z Velína do skladu se zbraněmi"
         },
         {
@@ -667,7 +665,10 @@
             "pruchodnost": false,
             "sila": 20,
             "spVlastnost": null,
-            "konec": null,
+            "konec": {
+              "nazev": "UtekHlVchod",
+              "popis": "Utekl jsi!"
+            },
             "popis": "Vnější zeď - nezničitelná"
         },
         {
@@ -727,7 +728,10 @@
             "pruchodnost": false,
             "sila": 20,
             "spVlastnost": null,
-            "konec": null,
+            "konec": {
+              "nazev": "UtekBankou",
+              "popis": "Utekl jsi a zbohatl jsi"
+            },
             "popis": "Vnější zeď trezoru - nezničitelná"
         },
         {

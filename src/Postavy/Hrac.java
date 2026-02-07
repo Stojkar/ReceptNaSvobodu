@@ -14,7 +14,7 @@ public class Hrac {
     private boolean mapaVentilaci;
 
 
-    public Mistnost posun(String smer){
+    public Zed getZedSmer(String smer){
         Zed zedPosunu;
 
         switch(smer){
@@ -36,15 +36,7 @@ public class Hrac {
         if(zedPosunu == null){
             return null;
         }
-        if(zedPosunu.getDruhouMistnost(AktMistnost) == null){
-            return AktMistnost;
-        }
-
-        if(zedPosunu.isPruchodnost()){
-            AktMistnost = zedPosunu.getDruhouMistnost(AktMistnost);
-        }
-
-        return AktMistnost;
+        return zedPosunu;
     }
 
     public Predmet najdiPredmetMistnost(String predmet){

@@ -51,7 +51,7 @@ public class Souboj implements Command{
             }
         }
 
-        if(silaUtoku > nepritel.getSila()){
+        if(silaUtoku >= nepritel.getSila()){
             hrac.getAktMistnost().getMistnostiNPC().remove(nepritel);
 
             if(nepritel.getPredmetNPC() != null){
