@@ -43,7 +43,7 @@ public class Predmet {
 
     @Override
     public String toString() {
-        return popis;
+        return nazev;
     }
 
     public String getNazev() {

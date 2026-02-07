@@ -16,27 +16,16 @@ public class Podej implements Command {
         NPC npc = hrac.najdiNPCMistnost(osoba);
         Predmet predmet = hrac.najdiPredmetInventar(predmetString);
 
-        switch (npc.getAkce()){
-            case BOJ ->
-            {
-                return "gg";
-            }
-            case VYMENA_PREDMETU ->
-                {
-                    hrac.invantarOdebrat(predmet);
-                    hrac.inventarPridat(npc.getPredmetNPC());
-                    npc.setPredmetNPC(predmet);
-                    return "Výměna proběhla";
-                }
-            case DAROVANI ->
-                {
-                    hrac.invantarOdebrat(predmet);
-                    return "Díky to jsi nemusel";
-                }
-            case VYJEDNAVANI ->
-                {
-                    return "";
-                }
+        if(npc.isBoj()) {
+            return "gg";
+        }
+        switch (npc.getJmeno()){
+            case "nasvalenec":
+
+
+
+
+
         }
 
 

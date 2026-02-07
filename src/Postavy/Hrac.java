@@ -33,6 +33,9 @@ public class Hrac {
             default:
                 zedPosunu = null;
         }
+        if(zedPosunu == null){
+            return null;
+        }
         if(zedPosunu.getDruhouMistnost(AktMistnost) == null){
             return AktMistnost;
         }
@@ -64,7 +67,7 @@ public class Hrac {
 
     public NPC najdiNepriatelNPC() {
         for(NPC npc : AktMistnost.getMistnostiNPC()) {
-            if(npc.getAkce() == NPC.AkcePostavy.BOJ) {
+            if(npc.isBoj()) {
                 return npc;
             }
         }

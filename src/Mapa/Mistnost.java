@@ -131,7 +131,7 @@ public class Mistnost {
         output.append(popis);
 
         for(NPC npc : mistnostiNPC){
-            if(npc.getAkce() == NPC.AkcePostavy.BOJ){
+            if(npc.isBoj()){
                 output.append("\n\nPozor! V místnosti je nepřítel ").append(npc.getJmeno()).append("!");
                 output.append("\nPřiprav se na boj!");
                 break;

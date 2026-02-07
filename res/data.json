@@ -105,15 +105,40 @@
         {
             "id": "dalsicely",
             "nazev": "Další čely",
-            "popis": "Řada dalších vězeňských cel. Všechny jsou prázdné.",
+            "popis": "Řada dalších vězeňských cel. Jsou zde vyklepanec,.",
             "severZed": "zed-vnější-sever-dalsicely",
             "vychodniZed": "zed-jidelna-dalsicely",
             "zapadniZed": "zed-dalsicely-dilsnaradim",
             "jizniZed": "zed-dalsicely-chodbadocel",
-            "predmetyMistnosti": [
-
-            ],
-            "mistnostiNPC": []
+            "predmetyMistnosti": [],
+            "mistnostiNPC": [
+              {
+                "jmeno": "vyklepanec",
+                "dialog": "Jak jses dostal ven? Nemáž náhodou aspoň cigaretu.",
+                "boj": false,
+                "sila": 0
+              },
+              {
+                "jmeno": "panikar",
+                "dialog": "Když mě osvobodíš dám ti plánek této věznice.",
+                "boj": false,
+                "sila": 0
+              },
+              {
+                "jmeno": "nemluva",
+                "dialog": "...",
+                "boj": false,
+                "sila": 2,
+                "predmetNPC":
+                {
+                  "nazev": "zelezna_tyc",
+                  "popis": "Ještě teplá od pilování",
+                  "schopnost": "MUZE_BOJOVAT",
+                  "sila": 2,
+                  "nicitelnost": true
+                }
+              }
+            ]
         },
         {
             "id": "dilsnaradim",
@@ -132,7 +157,22 @@
                 "nicitelnost": false
               }
             ],
-            "mistnostiNPC": []
+            "mistnostiNPC": [
+              {
+                "jmeno": "tri_strazni",
+                "dialog": "Stůj! Co tady děláš!",
+                "boj": true,
+                "sila": 3,
+                "predmetNPC":
+                {
+                  "nazev": "obusek",
+                  "popis": "Obušek kterým nechceš dostat",
+                  "schopnost": "MUZE_BOJOVAT",
+                  "sila": "1",
+                  "nicitelnost": false
+                }
+              }
+            ]
         },
         {
             "id": "skladszbraněmi",
@@ -165,8 +205,8 @@
             "mistnostiNPC": [
               {
                 "jmeno": "tri_strazni",
-                "dialog": "Co tady děláš",
-                "akce": "BOJ",
+                "dialog": "Co tady děláš!!",
+                "boj": true,
                 "sila": 3,
                 "predmetNPC": {
                   "nazev": "obusek",
@@ -187,7 +227,22 @@
             "zapadniZed": "zed-chodbadocel-dvorekprovezne",
             "jizniZed": "zed-chodbadocel-tvojecela",
             "predmetyMistnosti": [],
-            "mistnostiNPC": []
+            "mistnostiNPC": [
+              {
+                "jmeno": "strazny",
+                "dialog": "Coooo!!",
+                "boj": true,
+                "sila": 1,
+                "predmetNPC":
+                {
+                  "nazev": "obusek",
+                  "popis": "Obušek kterým nechceš dostat",
+                  "schopnost": "MUZE_BOJOVAT",
+                  "sila": "1",
+                  "nicitelnost": false
+                }
+              }
+            ]
         },
         {
             "id": "dvorekprovezne",
@@ -198,7 +253,22 @@
             "zapadniZed": "zed-vnější-zapad-dvorekprovezne",
             "jizniZed": "zed-dvorekprovezne-venkovniposilovna",
             "predmetyMistnosti": [],
-            "mistnostiNPC": []
+            "mistnostiNPC": [
+              {
+                "jmeno": "dva_strazny",
+                "dialog": "HEEEJJJ!!",
+                "boj": true,
+                "sila": 2,
+                "predmetNPC":
+                {
+                  "nazev": "obusek",
+                  "popis": "Obušek kterým nechceš dostat",
+                  "schopnost": "MUZE_BOJOVAT",
+                  "sila": "1",
+                  "nicitelnost": false
+                }
+              }
+            ]
         },
         {
             "id": "velin",
@@ -210,7 +280,20 @@
             "jizniZed": "zed-velin-kancelarsefa",
             "predmetyMistnosti": [],
             "mistnostiNPC": [
-
+              {
+                "jmeno": "pet_straznych",
+                "dialog": "Na něj!",
+                "boj": true,
+                "sila": 5,
+                "predmetNPC":
+                {
+                "nazev": "obusek",
+                "popis": "Obušek kterým nechceš dostat",
+                "schopnost": "MUZE_BOJOVAT",
+                "sila": "1",
+                "nicitelnost": false
+                }
+              }
             ]
         },
         {
@@ -221,16 +304,37 @@
             "vychodniZed": "zed-sprchy-kancelarsefa",
             "zapadniZed": "zed-sprchy-tvojecela",
             "jizniZed": "zed-vnější-jih-sprchy",
-            "predmetyMistnosti": [
+            "predmetyMistnosti": [],
+            "mistnostiNPC": [
               {
-                "nazev": "mydlovponozce",
-                "popis": "Mýdlo v tvé ponožce",
-                "schopnost": "MUZE_BOJOVAT",
-                "sila": 2,
-                "nicitelnost": true
+                "jmeno": "strazny",
+                "dialog": "Pracuji! Co tu děláš?",
+                "boj": true,
+                "sila": 1,
+                "predmetNPC":
+                {
+                  "nazev": "obusek",
+                  "popis": "Obušek kterým nechceš dostat",
+                  "schopnost": "MUZE_BOJOVAT",
+                  "sila": "1",
+                  "nicitelnost": false
+                }
+              },
+              {
+                "jmeno": "hrabrich",
+                "dialog": "Díký ten stražný by mě otrevoval donekonecna",
+                "boj": false,
+                "sila": 1,
+                "predmetNPC":
+                {
+                  "nazev": "mydlovponozce",
+                  "popis": "Mýdlo v tvé ponožce",
+                  "schopnost": "MUZE_BOJOVAT",
+                  "sila": 2,
+                  "nicitelnost": true
+                }
               }
-            ],
-            "mistnostiNPC": []
+            ]
         },
         {
             "id": "venkovniposilovna",
@@ -245,8 +349,14 @@
               {
               "jmeno": "nasvalenec",
               "dialog": "Něco za něco",
-              "akce": "VYMENA_PREDMETU",
+              "boj": false,
               "sila": "1"
+            },
+            {
+              "jmeno": "snilek",
+              "dialog": "Snil jsem o tom jak jsem ukradl krumpáč z boudy s nářadím a pomoci něho prokopal cestu domů",
+              "boj": false,
+              "sila": 0
             }
             ]
         },
@@ -260,7 +370,12 @@
             "jizniZed": "zed-vnější-jih-kancelarsefa",
             "predmetyMistnosti": [],
             "mistnostiNPC": [
-
+              {
+                "jmeno": "sef",
+                "dialog": "Jak ses sem dostal!",
+                "boj": false,
+                "sila": 2
+              }
             ]
         },
         {
@@ -271,10 +386,15 @@
             "vychodniZed": "zed-vnější-trezor-vychod",
             "zapadniZed": "zed-vnější-trezor-zapad",
             "jizniZed": "zed-jidelna-trezorbanky",
-            "predmetyMistnosti": [
-
-            ],
-            "mistnostiNPC": []
+            "predmetyMistnosti": [],
+            "mistnostiNPC": [
+              {
+                "jmeno": "strazny",
+                "dialog": "Cože?",
+                "boj": true,
+                "sila": 1
+              }
+            ]
         }
     ],
     "zdi": [
@@ -404,7 +524,7 @@
             "mistnost2": "tvojecela",
             "pruchodnost": true,
             "sila": 0,
-            "spVlastnost": null,
+            "spVlastnost": "JSOU_MRIZE",
             "konec": null,
             "popis": "Normální dveře"
         },

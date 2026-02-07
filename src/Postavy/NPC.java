@@ -4,16 +4,10 @@ import Predmety.Predmet;
 
 public class NPC {
 
-    public enum AkcePostavy{
-        BOJ,
-        VYMENA_PREDMETU,
-        DAROVANI,
-        VYJEDNAVANI
-    }
 
     private String jmeno;
     private String dialog;
-    private AkcePostavy akce;
+    private boolean boj;
     private int sila;
     private Predmet predmetNPC;
 
@@ -44,14 +38,6 @@ public class NPC {
         this.dialog = dialog;
     }
 
-    public AkcePostavy getAkce() {
-        return akce;
-    }
-
-    public void setAkce(AkcePostavy akce) {
-        this.akce = akce;
-    }
-
     public int getSila() {
         return sila;
     }
@@ -66,5 +52,13 @@ public class NPC {
 
     public void setPredmetNPC(Predmet predmetNPC) {
         this.predmetNPC = predmetNPC;
+    }
+
+    public boolean isBoj() {
+        return boj;
+    }
+
+    public void setBoj(boolean boj) {
+        this.boj = boj;
     }
 }

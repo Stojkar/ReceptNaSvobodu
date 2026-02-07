@@ -15,7 +15,7 @@ public class Pouzij implements Command{
         Predmet predmet =  hrac.najdiPredmetInventar(prikazy[0]);
 
         if(predmet == null){
-            return "Nemáš žádný předmět " + prikazy[2];
+            return "Nemáš žádný předmět " + prikazy[0];
         }
 
 
@@ -42,7 +42,7 @@ public class Pouzij implements Command{
             case MUZE_PILOVAT:
                 if(hrac.getAktMistnost().pilovatMrize(prikazy[1])){
                     //TODO
-                    hrac.inventarPridat(new Predmet("ZeleznaTyc","Ještě teplá od pilování", Predmet.SpecialniSchopnost.MUZE_BOJOVAT,2,true));
+                    hrac.inventarPridat(new Predmet("zelezna_tyc","Ještě teplá od pilování", Predmet.SpecialniSchopnost.MUZE_BOJOVAT,2,true));
                     return "Povedlo se ti přepilovat mříže a v ruce ti zbyla tyč";
                 }
                 return "Ve zdi nejsou mříže";

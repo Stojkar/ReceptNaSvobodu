@@ -57,7 +57,7 @@ public class ConsoleApp {
 
         if (hrac.najdiNepriatelNPC() != null) {
             if (!prikazy[0].equals("zautoc")) {
-                System.out.println("Pozor v místnosti je nepřítel " + hrac.najdiNepriatelNPC().getJmeno() + "!");
+                System.out.println(hrac.najdiNepriatelNPC().getJmeno() + " je silnější!");
                 System.out.println("Byl jsi poražen, konec hry!");
                 jeKonec = true;
                 return;
