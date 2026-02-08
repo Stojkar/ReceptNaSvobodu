@@ -1,5 +1,10 @@
 package Predmety;
 
+/**
+ * Reprezentuje herní předmět s různými schopnostmi.
+ * Každý předmět má název, popis, speciální schopnost, sílu a nicitelnost.
+ * Předměty mohou být použity k boji, ničení zdí, šroubování, pilování a dalším akcím.
+ */
 public class Predmet {
 
     public enum SpecialniSchopnost {
@@ -31,15 +36,6 @@ public class Predmet {
         this.sila = sila;
         this.nicitelnost = nicitelnost;
     }
-
-
-    public String vypisPopisu(){
-        return null;
-    }
-
-
-
-
 
     @Override
     public String toString() {

@@ -3,15 +3,24 @@ import Mapa.Mistnost;
 import Mapa.Zed;
 import Predmety.Inventar;
 import Predmety.Predmet;
+import System.DataHry;
 
-
+/**
+ * Reprezentuje hráče ve hře.
+ * Spravuje inventář, aktuální pozici, interakce s NPC a předměty.
+ * Obsahuje logiku pro alarm systém a rukojmí mechaniku.
+ */
 public class Hrac {
 
 
     private Inventar inventar;
     private Mistnost AktMistnost;
+    private boolean maRukojmi;
     private boolean mapaBitelostiZdi;
     private boolean mapaVentilaci;
+    private DataHry dataHry;
+    private boolean hlucneOdhaleni = false;
+    private int pocetPrikazuPoOdhaleni = 0;
 
 
     public Zed getZedSmer(String smer){
@@ -83,42 +92,29 @@ public class Hrac {
         return false;
     }
 
-    public NPC najdiNpc(String npc){
-        //TODO
-        return null;
-    }
-
-    public void rozbaleniBalicku(int pocet){
-        //TODO
-    }
 
     public boolean inventarPridat(Predmet predmet){
         return inventar.pridatPredmet(predmet);
     }
 
-    public boolean invantarOdebrat(Predmet predmet){
+    public boolean inventarOdebrat(Predmet predmet){
         return inventar.odebratPredmet(predmet);
     }
 
-    public Predmet pouzij(Predmet predmet){
-        return null;
+    public void zvysitPocetPrikazuPoOdhaleni(){
+        if(hlucneOdhaleni){
+            pocetPrikazuPoOdhaleni++;
+        }
     }
 
-    public Predmet zahod(Predmet predmet){
-        return null;
+    public void presunStrazi(){
+        Mistnost mistnost = AktMistnost.getJizniZed().getDruhouMistnost(AktMistnost).getVychodniZed().getDruhouMistnost(AktMistnost.getJizniZed().getDruhouMistnost(AktMistnost));
+        mistnost.getMistnostiNPC().removeAll(mistnost.getMistnostiNPC());
     }
 
-    public String mluv(){
-        return null;
-    }
-
-    public boolean souboj(NPC npc, Predmet predmet){
-        return false;
-    }
-
-    public Hrac(Mistnost aktMistnost, int maxPredmetu) {
+    public Hrac(Mistnost aktMistnost) {
         AktMistnost = aktMistnost;
-        this.inventar = new Inventar(maxPredmetu);
+        this.inventar = new Inventar();
     }
 
     @Override
@@ -158,5 +154,37 @@ public class Hrac {
 
     public void setMapaVentilaci(boolean mapaVentilaci) {
         this.mapaVentilaci = mapaVentilaci;
+    }
+
+    public boolean isMaRukojmi() {
+        return maRukojmi;
+    }
+
+    public void setMaRukojmi(boolean maRukojmi) {
+        this.maRukojmi = maRukojmi;
+    }
+
+    public DataHry getDataHry() {
+        return dataHry;
+    }
+
+    public void setDataHry(DataHry dataHry) {
+        this.dataHry = dataHry;
+    }
+
+    public boolean isHlucneOdhaleni() {
+        return hlucneOdhaleni;
+    }
+
+    public void setHlucneOdhaleni(boolean hlucneOdhaleni) {
+        this.hlucneOdhaleni = hlucneOdhaleni;
+    }
+
+    public int getPocetPrikazuPoOdhaleni() {
+        return pocetPrikazuPoOdhaleni;
+    }
+
+    public void setPocetPrikazuPoOdhaleni(int pocetPrikazuPoOdhaleni) {
+        this.pocetPrikazuPoOdhaleni = pocetPrikazuPoOdhaleni;
     }
 }

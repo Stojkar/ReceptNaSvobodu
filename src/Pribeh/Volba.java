@@ -7,10 +7,6 @@ public class Volba {
     private int obtiznost;
     private int pocetPredmetu;
 
-    public String spustitUvod(){
-        return null;
-    }
-
     public Volba(String cesta, String popis, int obtiznost) {
         this.cesta = cesta;
         this.popis = popis;

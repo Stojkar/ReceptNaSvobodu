@@ -2,6 +2,7 @@ package Postavy;
 
 import Predmety.Predmet;
 
+
 public class NPC {
 
 

@@ -1,8 +1,9 @@
+package System;
+
 import Mapa.Mistnost;
 import Mapa.Zed;
 import Postavy.NPC;
 import Predmety.Predmet;
-import Pribeh.Konec;
 import Pribeh.Volba;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -11,27 +12,28 @@ import java.io.*;
 import java.util.ArrayList;
 
 import java.io.InputStream;
+import java.util.Random;
 
-
-
+/**
+ * Reprezentuje herní data načtená z JSON souboru.
+ * Tato třída slouží jako datový kontejner pro veškerý statický herní obsah,
+ * jako jsou předměty, postavy, místnosti a příběhové volby.
+ */
 public class DataHry {
-
-
-    /**
-     * Represents the game data loaded from a JSON file.
-     * This class serves as a data container for all static game content, such as items, characters, locations, and quests.
-     *
-     */
-
-
     public ArrayList<Predmet> predmety;
     public ArrayList<Mistnost> mistnosti;
     public ArrayList<Zed> zdi;
     public String uvodniText;
     public ArrayList<Volba> volby;
+    public Predmet zeleznaTyc;
+    public NPC ozbrojenaOchranka;
 
-
-
+    /**
+     * Načte herní data z JSON souboru pomocí Jackson ObjectMapper.
+     * @param file InputStream s JSON daty
+     * @return Instanci DataHry s načtenými daty
+     * @throws RuntimeException pokud dojde k chybě při čtení JSON
+     */
     public static DataHry loadGameDataFromResources(InputStream file) {
         ObjectMapper mapper = new ObjectMapper();
 
@@ -43,12 +45,17 @@ public class DataHry {
 
     }
 
-
     public DataHry() {
     }
 
     public ArrayList<Mistnost> getMistosti() {
         return mistnosti;
+    }
+
+    public Mistnost nahodnaMistnost() {
+        Random rand = new Random();
+        int cislo =  rand.nextInt(mistnosti.size());
+        return mistnosti.get(cislo);
     }
 
     @Override
@@ -100,4 +107,19 @@ public class DataHry {
         this.volby = volby;
     }
 
+    public Predmet getZeleznaTyc() {
+        return zeleznaTyc;
+    }
+
+    public void setZeleznaTyc(Predmet zeleznaTyc) {
+        this.zeleznaTyc = zeleznaTyc;
+    }
+
+    public NPC getOzbrojenaOchranka() {
+        return ozbrojenaOchranka;
+    }
+
+    public void setOzbrojenaOchranka(NPC ozbrojenaOchranka) {
+        this.ozbrojenaOchranka = ozbrojenaOchranka;
+    }
 }

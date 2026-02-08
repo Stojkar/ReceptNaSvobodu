@@ -2,20 +2,19 @@ package Predmety;
 
 import java.util.ArrayList;
 
+/**
+ * Reprezentuje inventář hráče s omezenou kapacitou.
+ * Spravuje kolekci předmětů, přidávání a odebírání s kontrolou limitu.
+ */
 public class Inventar {
-
-
     private ArrayList<Predmet> predmety;
     private int maxPredmetu;
 
-
-
-    public ArrayList<Predmet> vypisInventare() {
-        return null;
-    }
-
     public boolean pridatPredmet(Predmet predmet) {
         if(predmet==null){
+            return false;
+        }
+        if(predmety.size()>=maxPredmetu){
             return false;
         }
         return predmety.add(predmet);
@@ -29,9 +28,9 @@ public class Inventar {
     }
 
 
-    public Inventar(int maxPredmetu) {
+    public Inventar() {
         this.predmety = new  ArrayList<>();
-        this.maxPredmetu = maxPredmetu;
+        this.maxPredmetu = 5;
     }
 
     @Override

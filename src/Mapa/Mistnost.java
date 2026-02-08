@@ -7,11 +7,18 @@ import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id"
 )
+
+/**
+ * Reprezentuje herní místnost ve věznici.
+ * Obsahuje předměty, NPC, zdi ve čtyřech směrech (sever, jih, východ, západ).
+ * Poskytuje metody pro manipulaci se zdmi (ničení, pilování, šroubování ventilace).
+ */
 public class Mistnost {
 
     private String id;
@@ -31,16 +38,10 @@ public class Mistnost {
     private Zed jizniZed;
 
 
-    public String popisMistnosti() {
-        return null;
-    }
 
-    public Zed poskytnutiZdi(String starna) {
-        return null;
-    }
 
     public boolean pridejPredmet(Predmet predmet) {
-        return false;
+        return predmetyMistnosti.add(predmet);
     }
 
     public Zed zedPodleSmeru(String smer){
@@ -66,6 +67,22 @@ public class Mistnost {
         };
     }
 
+    public String prohledat() {
+        StringBuilder sb = new StringBuilder();
+        predmetyMistnosti.forEach(predmet -> {
+            sb.append(predmet.getNazev());
+        });
+        mistnostiNPC.forEach(npc -> {
+            sb.append(npc.getJmeno());
+        });
+        return sb.toString();
+    }
+
+    /**
+     * Odšroubuje ventilaci v daném směru, pokud existuje.
+     * @param smer Směr (sever/jih/vychod/zapad)
+     * @return true pokud byla ventilace úspěšně odšroubována, false jinak
+     */
     public boolean srouboVentilace(String smer){
         Zed zed = zedPodleSmeru(smer);
         if(zed == null){
@@ -78,6 +95,11 @@ public class Mistnost {
         return false;
     }
 
+    /**
+     * Přepíluje mříže v daném směru, pokud existují.
+     * @param smer Směr (sever/jih/vychod/zapad)
+     * @return true pokud byly mříže úspěšně přepílovány, false jinak
+     */
     public boolean pilovatMrize(String smer){
         Zed zed = zedPodleSmeru(smer);
         if(zed == null){
@@ -90,6 +112,12 @@ public class Mistnost {
         return false;
     }
 
+    /**
+     * Zničí zeď v daném směru, pokud je síla útoku dostačující.
+     * @param sila Síla předmětu použitého k ničení
+     * @param smer Směr (sever/jih/vychod/zapad)
+     * @return true pokud byla zeď zničena, false pokud je příliš silná nebo neexistuje
+     */
     public boolean znicZed(int sila, String smer){
         Zed zed = zedPodleSmeru(smer);
         if(zed == null){
@@ -113,6 +141,15 @@ public class Mistnost {
         return false;
     }
 
+    public boolean odebratNPC(NPC npc) {
+        mistnostiNPC.forEach(postava -> {
+            if(postava == npc){
+                mistnostiNPC.remove(npc);
+            }
+        });
+        return false;
+    }
+
     public Mistnost(String id, String nazev, String popis, Zed severZed, Zed vychodniZed, Zed zapaadniZed, Zed jizniZed) {
         this.id = id;
         this.nazev = nazev;
@@ -132,9 +169,35 @@ public class Mistnost {
 
         for(NPC npc : mistnostiNPC){
             if(npc.isBoj()){
-                output.append("\n\nPozor! V místnosti je nepřítel ").append(npc.getJmeno()).append("!");
+                output.append("\nPozor! V místnosti je nepřítel ").append(npc.getJmeno()).append("!");
                 output.append("\nPřiprav se na boj!");
-                break;
+                return output.toString(); // Při boji neukázat ostatní věci
+            }
+        }
+
+        if(predmetyMistnosti != null && !predmetyMistnosti.isEmpty()){
+            output.append("\n V místnosti vidíš:");
+            for(Predmet predmet : predmetyMistnosti){
+                output.append("\n  • ").append(predmet.getNazev());
+            }
+        }
+
+        if(mistnostiNPC != null && !mistnostiNPC.isEmpty()){
+            boolean hasNonEnemy = false;
+            StringBuilder npcList = new StringBuilder();
+
+            for(NPC npc : mistnostiNPC){
+                if(!npc.isBoj()){
+                    if(!hasNonEnemy){
+                        npcList.append("\n V místnosti jsou:");
+                        hasNonEnemy = true;
+                    }
+                    npcList.append("\n  • ").append(npc.getJmeno());
+                }
+            }
+
+            if(hasNonEnemy){
+                output.append(npcList);
             }
         }
 

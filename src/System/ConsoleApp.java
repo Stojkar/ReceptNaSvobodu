@@ -1,3 +1,5 @@
+package System;
+
 import Command.Command;
 import Command.Pohyb;
 import Command.Seber;
@@ -7,14 +9,22 @@ import Command.Inventar;
 import Command.Exit;
 import Command.Dialog;
 import Command.Souboj;
+import Command.Mapa;
+import Command.Zahod;
+import Command.Prohledat;
+import Command.Napoveda;
 import Postavy.Hrac;
-import Predmety.Predmet;
+import Postavy.NPC;
 import Pribeh.Volba;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * Konzolová aplikace, která řídí hlavní herní smyčku.
+ * Zpracovává uživatelské vstupy, vykonává příkazy a zobrazuje výstupy.
+ * Obsahuje logiku pro registraci příkazů, zpracování alarmu a rozbalení balíčku.
+ */
 public class ConsoleApp {
 
     private Scanner scanner;
@@ -31,6 +41,10 @@ public class ConsoleApp {
         this.hrac = hrac;
     }
 
+    /**
+     * Inicializuje a registruje všechny herní příkazy.
+     * Voláno při spuštění hry.
+     */
     public void inicializace(){
         commands.put("jdi", new Pohyb(hrac));
         commands.put("seber", new Seber(hrac));
@@ -40,6 +54,10 @@ public class ConsoleApp {
         commands.put("konec", new Exit());
         commands.put("mluv", new Dialog(hrac));
         commands.put("zautoc", new Souboj(hrac));
+        commands.put("zahod",new Zahod(hrac));
+        commands.put("rozhledni", new Prohledat(hrac));
+        commands.put("napoveda", new Napoveda());
+        commands.put("mapa",new Mapa());
     }
 
     public void execude() {
@@ -71,6 +89,39 @@ public class ConsoleApp {
             System.out.println("Prikaz neexistuje!");
         }
 
+    }
+
+    /**
+     * Zpracovává alarmový systém pro hlasité předměty (dynamit, pistole).
+     * Po třech příkazích po odebalení vytvoří ozbrojenou ochranu.
+     */
+    private void zpracovatHlucneOdhaleni(){
+        if(!hrac.isHlucneOdhaleni()){
+            return;
+        }
+
+        hrac.zvysitPocetPrikazuPoOdhaleni();
+        int zbyva = 3 - hrac.getPocetPrikazuPoOdhaleni();
+
+        if(zbyva > 0){
+            System.out.println("\n Bachaři tě hledají! Zbývají " + zbyva + " příkazy...\n");
+        }
+
+        if(hrac.getPocetPrikazuPoOdhaleni() >= 3){
+            stvoreniOzbrojeneOchranky();
+            System.out.println("\n PŘIBĚHLA OZBROJENÁ OCHRANKA! Musíš bojovat!\n");
+            hrac.setPocetPrikazuPoOdhaleni(0);
+        }
+    }
+
+    private void stvoreniOzbrojeneOchranky(){
+        DataHry data = hrac.getDataHry();
+        if(data == null || data.getOzbrojenaOchranka() == null){
+            return;
+        }
+
+        NPC OzbrojenaOchranka = data.getOzbrojenaOchranka();
+        hrac.getAktMistnost().getMistnostiNPC().add(OzbrojenaOchranka);
     }
 
 

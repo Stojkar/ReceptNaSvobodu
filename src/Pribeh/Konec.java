@@ -8,12 +8,8 @@ public class Konec {
     private boolean rukojmi;
     private String popis;
 
-
-    public Konec(String popis) {
-        this.popis = popis;
-    }
-
     public String spustitKonec(Hrac hrac) {
+        //TODO
         return "Koneccccccc";
     }
 

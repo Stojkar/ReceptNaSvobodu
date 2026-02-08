@@ -9,6 +9,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id"
 )
+
+/**
+ * Reprezentuje postavu (NPC) ve hře.
+ * Může mít různé role: nepřítel (boj), obchodník, nebo dialogová postava.
+ * Každý NPC může mít předmět a specifickou sílu v boji.
+ */
 public class Zed {
 
 
@@ -32,11 +38,6 @@ public class Zed {
     public Zed() {
     }
 
-    public void znicitZed(){
-
-    }
-
-
     public Mistnost getDruhouMistnost(Mistnost mistnostKdeStoji){
         if(mistnostKdeStoji == null){
             return null;
@@ -46,17 +47,6 @@ public class Zed {
         }else{
             return mistnost1;
         }
-    }
-
-
-
-    public Mistnost vypocetPruchodu(){
-
-        //podle pruchodnosti
-        //pokud za zdi bude konec spusti to konec
-        //vrati mistost kam se hrac presune
-
-        return null;
     }
 
 

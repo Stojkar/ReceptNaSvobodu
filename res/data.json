@@ -39,7 +39,7 @@
         "nazev": "dynamit",
         "popis": "Silná výbušnina nutná k proražení zdi do trezoru banky. K použití vyžaduje zapalovač.",
         "schopnost": "MUZE_NICIT_ZDI",
-        "sila": 100,
+        "sila": 15,
         "nicitelnost": true
       },
       {
@@ -373,7 +373,7 @@
               {
                 "jmeno": "sef",
                 "dialog": "Jak ses sem dostal!",
-                "boj": false,
+                "boj": true,
                 "sila": 2
               }
             ]
@@ -754,5 +754,18 @@
             "konec": null,
             "popis": "Vnější zeď trezoru - nezničitelná"
         }
-    ]
+    ],
+  "zeleznaTyc":  {
+    "nazev":  "zelezna_tyc",
+    "popis":  "Ještě teplá od pilování",
+    "schopnost":  "MUZE_BOJOVAT",
+    "sila":  2,
+    "nicitelnost":  true
+  },
+  "ozbrojenaOchranka": {
+    "jmeno": "ozbrojena_ochranka",
+    "dialog": "Zahoď zbraň nebo budeme střílet!!",
+    "boj": true,
+    "sila": 30
+  }
 }

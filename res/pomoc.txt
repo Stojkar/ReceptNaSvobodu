@@ -1,0 +1,28 @@
+==========================================
+           NÁPOVĚDA - PŘÍKAZY
+==========================================
+
+POHYB:
+  jdi <směr>          - Pohyb do místnosti (sever/jih/vychod/zapad)
+  rozhledni           - Prohlédni místnost (předměty, NPC)
+  mapa                - Zobraz mapu věznice
+
+PŘEDMĚTY:
+  seber <předmět>     - Seber předmět z místnosti
+  zahod <předmět>     - Zahoď předmět z inventáře
+  pouzij <předmět>    - Použij předmět (na zeď/mříže/ventilaci)
+  inventar            - Zobraz svůj inventář
+
+INTERAKCE:
+  mluv <osoba>        - Mluv s osobou v místnosti
+  zautoc <zbraň>      - Zaútoč na nepřítele (nutné při boji!)
+
+SYSTÉM:
+  pomoc               - Zobraz tuto nápovědu
+  napoveda            - Zobraz herní tipy
+  konec               - Ukonči hru
+
+==========================================
+TIP: Použij 'rozhledni' pro zobrazení
+     předmětů a osob v místnosti!
+==========================================
