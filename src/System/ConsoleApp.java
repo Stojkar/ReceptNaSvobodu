@@ -82,11 +82,15 @@ public class ConsoleApp {
             }
         }
 
-        if (commands.containsKey(prikazy[0])) {
-            System.out.println(commands.get(prikazy[0]).execute(datPrikazu));
-            jeKonec = commands.get(prikazy[0]).exit();
+
+        Command command = commands.get(prikazy[0]);
+        if (command == null) {
+            System.out.println("Neznámý příkaz");
         } else {
-            System.out.println("Prikaz neexistuje!");
+            System.out.println(command.execute(datPrikazu));
+            jeKonec = command.exit();
+
+            zpracovatHlucneOdhaleni();
         }
 
     }
