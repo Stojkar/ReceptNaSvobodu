@@ -2,7 +2,11 @@ package Postavy;
 
 import Predmety.Predmet;
 
-
+/**
+ * Reprezentuje postavu (NPC) ve hře.
+ * Může mít různé role: nepřítel (boj), obchodník, nebo dialogová postava.
+ * Každý NPC může mít předmět a specifickou sílu v boji.
+ */
 public class NPC {
 
 

@@ -28,11 +28,11 @@ public class Pouzij implements Command{
                 }
                 if(hrac.getAktMistnost().znicZed(predmet.getSila(),prikazy[1])){
                     if(hrac.moznaZnicit(predmet)){
-                        return "Zničil jsi zeď, ale zni4il si předmět";
+                        return "Zničil jsi zeď, ale zničil si předmět";
                     }
                     return "Zničil jsi zeď, cesta je průchodná";
                 }
-                return "zaď je moc silná na tento předmět";
+                return "zeď je moc silná na tento předmět";
             case MUZE_SROUBOVAT:
                 if(prikazy.length < 2){
                     return "Kam chceš použít " + predmet.getNazev() + "? (sever/jih/vychod/zapad)";

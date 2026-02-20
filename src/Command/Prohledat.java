@@ -7,8 +7,7 @@ public class Prohledat implements Command {
 
     @Override
     public String execute(String prikaz) {
-        hrac.getAktMistnost().prohledat();
-        return "";
+        return hrac.getAktMistnost().prohledat();
     }
 
     @Override

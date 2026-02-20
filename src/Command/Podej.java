@@ -16,11 +16,19 @@ public class Podej implements Command {
         String osoba = prikaz[0];
         String predmetString = prikaz[1];
         NPC npc = hrac.najdiNPCMistnost(osoba);
-        Predmet predmet = hrac.najdiPredmetInventar(predmetString);
+        if(npc == null){
+            return "V místnosti není žádná osoba jménem " + osoba;
+        }
 
         if(npc.isBoj()) {
             return "gg";
         }
+
+        Predmet predmet = hrac.najdiPredmetInventar(predmetString);
+        if(predmet == null){
+            return "Nemáš předmět '" + predmetString + "' v inventáři";
+        }
+
         switch (npc.getJmeno()){
             case "nasvalenec":
                 if(!predmet.getNazev().equals("obusek")){

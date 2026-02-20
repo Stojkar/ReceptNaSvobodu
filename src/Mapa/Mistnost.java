@@ -142,13 +142,9 @@ public class Mistnost {
     }
 
     public boolean odebratNPC(NPC npc) {
-        mistnostiNPC.forEach(postava -> {
-            if(postava == npc){
-                mistnostiNPC.remove(npc);
-            }
-        });
-        return false;
+        return mistnostiNPC.removeIf(postava -> postava == npc);
     }
+
 
     public Mistnost(String id, String nazev, String popis, Zed severZed, Zed vychodniZed, Zed zapaadniZed, Zed jizniZed) {
         this.id = id;

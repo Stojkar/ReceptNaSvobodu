@@ -16,7 +16,7 @@ public class Seber implements Command {
             hrac.getAktMistnost().odberPredmet(predmet);
             return "Seberal jsi predmet " + p.toString();
         }
-        return "V této místnosti není žádný předmět " + predmet;
+        return "Inventář je plný";
     }
 
     @Override

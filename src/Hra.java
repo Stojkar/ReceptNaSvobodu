@@ -23,8 +23,7 @@ public class Hra {
 
         DataHry data = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("data.json"));
         hrac = new Hrac(data.getMistosti().getFirst());
-        ConsoleApp console = new ConsoleApp(hrac);
-        console.start();
+        this.console.start();
 
     }
 

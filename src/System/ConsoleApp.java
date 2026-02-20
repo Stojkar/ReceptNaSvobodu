@@ -13,6 +13,7 @@ import Command.Mapa;
 import Command.Zahod;
 import Command.Prohledat;
 import Command.Napoveda;
+import Command.Podej;
 import Postavy.Hrac;
 import Postavy.NPC;
 import Pribeh.Volba;
@@ -58,6 +59,7 @@ public class ConsoleApp {
         commands.put("rozhledni", new Prohledat(hrac));
         commands.put("napoveda", new Napoveda());
         commands.put("mapa",new Mapa());
+        commands.put("podej", new Podej(hrac));
     }
 
     public void execude() {
