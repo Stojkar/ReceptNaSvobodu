@@ -38,7 +38,9 @@ public class Hra {
         console = new ConsoleApp(null);
         Volba vybranaVolba = console.zobrazUvod(pribeh);
 
+        System.out.println(vybranaVolba.getPopis());
         if(vybranaVolba.getCesta().equals("poctivost")){
+
             System.out.println("Pekárna zkrachovala a rodina skončila na ulici.");
             System.out.println("\nKONEC HRY");
             return;
