@@ -522,8 +522,8 @@
             "id": "zed-chodbadocel-tvojecela",
             "mistnost1": "chodbadocel",
             "mistnost2": "tvojecela",
-            "pruchodnost": true,
-            "sila": 0,
+            "pruchodnost": false,
+            "sila": 2,
             "spVlastnost": "JSOU_MRIZE",
             "konec": null,
             "popis": "Normální dveře"
@@ -544,7 +544,7 @@
             "mistnost2": "venkovniposilovna",
             "pruchodnost": true,
             "sila": 0,
-            "spVlastnost": "JSOU_MRIZE",
+            "spVlastnost": null,
             "konec": null,
             "popis": "Normální dveře"
         },
