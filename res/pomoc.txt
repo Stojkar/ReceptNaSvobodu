@@ -16,6 +16,7 @@ PŘEDMĚTY:
 INTERAKCE:
   mluv <osoba>        - Mluv s osobou v místnosti
   zautoc <zbraň>      - Zaútoč na nepřítele (nutné při boji!)
+  podej <osoba> <předmět> - Druhá možnost interakce s osobou za nějakou cenu
 
 SYSTÉM:
   pomoc               - Zobraz tuto nápovědu

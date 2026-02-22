@@ -76,7 +76,7 @@ public class ConsoleApp {
             datPrikazu = "nic";
         }
 
-        if (hrac.najdiNepriatelNPC() != null) {
+        if (hrac.najdiNepriatelNPC() != null && !hrac.isMaRukojmi()) {
             if (!prikazy[0].equals("zautoc")) {
                 System.out.println(hrac.najdiNepriatelNPC().getJmeno() + " je silnější!");
                 System.out.println("Byl jsi poražen, konec hry!");
