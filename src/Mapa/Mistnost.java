@@ -26,6 +26,9 @@ public class Mistnost {
     private String popis;
     private ArrayList<Predmet> predmetyMistnosti;
     private ArrayList<NPC> mistnostiNPC;
+    private boolean navstivena = false;
+
+
 
 
     @JsonIdentityReference(alwaysAsId = true)
@@ -273,5 +276,13 @@ public class Mistnost {
 
     public void setJizniZed(Zed jizniZed) {
         this.jizniZed = jizniZed;
+    }
+
+    public boolean isNavstivena() {
+        return navstivena;
+    }
+
+    public void setNavstivena(boolean navstivena) {
+        this.navstivena = navstivena;
     }
 }

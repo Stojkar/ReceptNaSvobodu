@@ -58,7 +58,7 @@ public class Souboj implements Command{
 
         int silaUtoku = aplikovatBonusCigaret(zbran.getSila(), pouzitCigarety, zprava);
 
-        if(silaUtoku > nepritel.getSila()){
+        if(silaUtoku >= nepritel.getSila()){
             return vyhratBoj(nepritel, zbran, zprava);
         }else{
             konec = true;

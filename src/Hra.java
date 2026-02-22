@@ -35,7 +35,9 @@ public class Hra {
         DataHry data = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("data.json"));
         DataHry pribeh = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("pribeh.json"));
 
-        console = new ConsoleApp(null);
+        hrac = new Hrac(data.getMistnosti().getFirst());
+        hrac.setDataHry(data);
+        console = new ConsoleApp(hrac,data);
         Volba vybranaVolba = console.zobrazUvod(pribeh);
 
         System.out.println(vybranaVolba.getPopis());
@@ -45,11 +47,6 @@ public class Hra {
             System.out.println("\nKONEC HRY");
             return;
         }
-
-        hrac = new Hrac(data.getMistnosti().getFirst());
-        hrac.setDataHry(data);
-        console = new ConsoleApp(hrac);
-
         console.rozbalBalicek(vybranaVolba.getPocetPredmetu(), data.getPredmety());
 
         System.out.println(hrac.getAktMistnost());
