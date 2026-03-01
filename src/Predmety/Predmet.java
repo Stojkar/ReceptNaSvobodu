@@ -7,6 +7,9 @@ package Predmety;
  */
 public class Predmet {
 
+    /**
+     * Výčet speciálních schopností předmětu.
+     */
     public enum SpecialniSchopnost {
         MUZE_BOJOVAT,
         MUZE_NICIT_ZDI,
@@ -29,6 +32,15 @@ public class Predmet {
     public Predmet() {
     }
 
+    /**
+     * Vytvoří nový předmět se všemi parametry.
+     *
+     * @param nazev       Název předmětu
+     * @param popis       Textový popis předmětu
+     * @param schopnost   Speciální schopnost předmětu
+     * @param sila        Síla předmětu (pro boj nebo ničení zdí)
+     * @param nicitelnost pokud je předmět zničí po použití
+     */
     public Predmet(String nazev, String popis, SpecialniSchopnost schopnost, int sila, boolean nicitelnost) {
         this.nazev = nazev;
         this.popis = popis;
@@ -78,7 +90,7 @@ public class Predmet {
         return nicitelnost;
     }
 
-    public void setNicitelnost(boolean niceitelnost) {
+    public void setNicitelnost(boolean nicitelnost) {
         this.nicitelnost = nicitelnost;
     }
 }

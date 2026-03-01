@@ -3,7 +3,7 @@
   "volby": [
     {
       "cesta": "poctivost",
-      "popis": "Zavřel jsi sešity, zhasil světlo a šel spát.\nRáno jsi zavolal do banky a přiznal platební neschopnost.\nPekárna zkrachovala do tří týdnů. Rodina skončila na ulici.\nByl jsi svobodný — ale bez všeho ostatního.",
+      "popis": "Zavřel jsi sešity, zhasil světlo a šel spát.\nRáno jsi zavolal do banky a přiznal finanční neschopnost.\nPekárna zkrachovala do tří týdnů. Rodina skončila na ulici.\nByl jsi svobodný — ale bez všeho ostatního.",
       "obtiznost": 0,
       "pocetPredmetu": 0
     },
@@ -15,7 +15,7 @@
     },
     {
       "cesta": "park",
-      "popis": "Vykradl jsi pokladnu zábavního parku za městem.\nNebylo tam moc — pár desítek tisíc z víkendových tržeb.\nAle ostraha byla nízká a ty jsi byl rychlý.\nZdálo se ti, že jsi to zvládl... dokud tě nezastavila\nhlídka kilometr od parku s plnou brašnou.\n\nZatkli tě, nasadili pouta a odvezli.\nTeď sedíš v cele číslo 7.\n\nRychlý pohled kolem — na severu mříže, jinak holé zdi.\nNa západě si všimneš ventilační šachty.\nU tvých nohou leží balíček. Od rodiny.\nStrážný ho zapomněl prohledat.\n\nOtvíráš ho. Navrchu leží zmačkaný lísteček:\n\n  \"Karle, moc peněz nám nezbylo, policie prohledala byt.\n   Sehnala jsem jen 4 věci — prodala jsem i svůj prsten.\n   Prosím, dostaN se odsud ven.\n      — Míša\"",
+      "popis": "Vykradl jsi pokladnu zábavního parku za městem.\nNebylo tam moc — pár desítek tisíc z víkendových tržeb.\nAle ostraha byla nízká a ty jsi byl rychlý.\nZdálo se ti, že jsi to zvládl... dokud tě další den\nnepřišla zkontrolovat hlídka.\n\nZatkli tě, nasadili pouta a odvezli.\nTeď sedíš v cele číslo 7.\n\nRychlý pohled kolem — na severu mříže, jinak holé zdi.\nNa západě si všimneš ventilační šachty.\nU tvých nohou leží balíček. Od rodiny.\nStrážný ho zapomněl prohledat.\n\nOtvíráš ho. Navrchu leží zmačkaný lísteček:\n\n  \"Karle, moc peněz nám nezbylo, policie prohledala byt.\n   Sehnala jsem 4 věci — prodala jsem i svůj prsten, moc jsi toho nepřinesl.\n   Prosím, dostaň se odsud ven.\n      — Míša\"",
       "obtiznost": 2,
       "pocetPredmetu": 4
     },

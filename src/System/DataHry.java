@@ -18,6 +18,10 @@ import java.util.Random;
  * Reprezentuje herní data načtená z JSON souboru.
  * Tato třída slouží jako datový kontejner pro veškerý statický herní obsah,
  * jako jsou předměty, postavy, místnosti a příběhové volby.
+ * Poskytuje metody pro načtení dat pomocí Jackson ObjectMapper
+ * a pro získání náhodné místnosti.
+ *
+ * @author Marek
  */
 public class DataHry {
     public ArrayList<Predmet> predmety;
@@ -30,9 +34,10 @@ public class DataHry {
 
     /**
      * Načte herní data z JSON souboru pomocí Jackson ObjectMapper.
-     * @param file InputStream s JSON daty
-     * @return Instanci DataHry s načtenými daty
-     * @throws RuntimeException pokud dojde k chybě při čtení JSON
+     *
+     * @param file InputStream s JSON daty herního souboru
+     * @return Instance {@link DataHry} s načtenými daty
+     * @throws RuntimeException pokud dojde k chybě při čtení nebo parsování JSON
      */
     public static DataHry loadGameDataFromResources(InputStream file) {
         ObjectMapper mapper = new ObjectMapper();

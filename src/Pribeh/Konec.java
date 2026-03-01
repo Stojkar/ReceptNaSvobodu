@@ -2,35 +2,33 @@ package Pribeh;
 
 import Postavy.Hrac;
 
+/**
+ * Reprezentuje konec hry přiřazený k určité zdi (východu).
+ * V závislosti na stavu hráče (má/nemá rukojmího) zobrazí
+ * různý závěrečný text.
+ *
+ * @author Marek
+ */
 public class Konec {
 
-    private String nazev;
-    private boolean rukojmi;
     private String popis;
+    private String popisRukojmi;
 
+    /**
+     * Spustí konec hry a vrátí příslušný závěrečný text.
+     * Pokud hráč drží rukojmího, zobrazí speciální variantu konce.
+     *
+     * @param hrac Hráč, jehož stav rozhodne o výsledku
+     * @return Textový popis konce hry
+     */
     public String spustitKonec(Hrac hrac) {
-        //TODO
-        return "Koneccccccc";
+        if (hrac.isMaRukojmi()) {
+            return popisRukojmi;
+        }
+        return popis;
     }
 
     public Konec() {
-    }
-
-
-    public String getNazev() {
-        return nazev;
-    }
-
-    public void setNazev(String nazev) {
-        this.nazev = nazev;
-    }
-
-    public boolean isRukojmi() {
-        return rukojmi;
-    }
-
-    public void setRukojmi(boolean rukojmi) {
-        this.rukojmi = rukojmi;
     }
 
     public String getPopis() {
@@ -39,5 +37,13 @@ public class Konec {
 
     public void setPopis(String popis) {
         this.popis = popis;
+    }
+
+    public String getPopisRukojmi() {
+        return popisRukojmi;
+    }
+
+    public void setPopisRukojmi(String popisRukojmi) {
+        this.popisRukojmi = popisRukojmi;
     }
 }

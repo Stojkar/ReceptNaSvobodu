@@ -17,7 +17,10 @@ import java.util.Random;
 /**
  * Reprezentuje herní místnost ve věznici.
  * Obsahuje předměty, NPC, zdi ve čtyřech směrech (sever, jih, východ, západ).
- * Poskytuje metody pro manipulaci se zdmi (ničení, pilování, šroubování ventilace).
+ * Poskytuje metody pro manipulaci se zdmi (ničení, pilování, šroubování
+ * ventilace).
+ *
+ * @author Marek
  */
 public class Mistnost {
 
@@ -47,6 +50,13 @@ public class Mistnost {
         return predmetyMistnosti.add(predmet);
     }
 
+    /**
+     * Vrátí zeď v daném směru od místnosti.
+     *
+     * @param smer Směr – {@code sever}, {@code jih}, {@code vychod} nebo
+     *             {@code zapad}
+     * @return Zeď v daném směru, nebo {@code null} pokud směr neexistuje
+     */
     public Zed zedPodleSmeru(String smer){
         Zed zed;
         return switch (smer) {
@@ -70,15 +80,37 @@ public class Mistnost {
         };
     }
 
+    /**
+     * Prohledá místnost a vrátí textový přehled zdí, předmětů a NPC.
+     *
+     * @return Textový popis obsahu místnosti
+     */
     public String prohledat() {
         StringBuilder sb = new StringBuilder();
-        predmetyMistnosti.forEach(predmet -> {
-            sb.append(predmet.getNazev());
-        });
-        mistnostiNPC.forEach(npc -> {
-            sb.append(npc.getJmeno());
-        });
+        sb.append("Sever: ").append(popisZdi(severZed)).append("  Jih: ").append(popisZdi(jizniZed)).append("\n");
+        sb.append("Vychod: ").append(popisZdi(vychodniZed)).append("  Zapad: ").append(popisZdi(zapadniZed))
+                .append("\n");
+        predmetyMistnosti.forEach(p -> sb.append("Predmet: ").append(p.getNazev()).append("\n"));
+        mistnostiNPC.forEach(npc -> sb.append("Osoba: ").append(npc.getJmeno()).append("\n"));
         return sb.toString();
+    }
+
+    /**
+     * Vrátí stručný textový popis typu zdi.
+     *
+     * @param zed Zeď, jejíž typ má být popsán
+     * @return Textový popis zdi (stena, VYCHOD!, sachta, mrize, dvere nebo zed)
+     */
+    private String popisZdi(Zed zed) {
+        if (zed == null)
+            return "stena";
+        if (zed.getKonec() != null)
+            return "VYCHOD!";
+        if (zed.getspVlastnost() == Zed.SpecialniVlastnost.JE_VENTILACE)
+            return "sachta";
+        if (zed.getspVlastnost() == Zed.SpecialniVlastnost.JSOU_MRIZE)
+            return "mrize";
+        return zed.isPruchodnost() ? "dvere" : "zed";
     }
 
     /**
@@ -135,13 +167,8 @@ public class Mistnost {
     }
 
     public boolean odberPredmet(String nazPredmet) {
-        for (Predmet predmet : predmetyMistnosti) {
-            if (predmet.getNazev().equals(nazPredmet)) {
-                predmetyMistnosti.remove(predmet);
-                return true;
-            }
-        }
-        return false;
+        return predmetyMistnosti.removeIf(predmet -> predmet.getNazev().equals(nazPredmet));
+
     }
 
     public boolean odebratNPC(NPC npc) {
@@ -161,6 +188,12 @@ public class Mistnost {
         this.jizniZed = jizniZed;
     }
 
+    /**
+     * Vrátí textový popis místnosti zobrazený při vstupu hráče.
+     * Při přítomnosti nepřítele zobrazí pouze varování o boji.
+     *
+     * @return Textový výpis místnosti včetně předmětů a přátelských NPC
+     */
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();

@@ -7,8 +7,11 @@ import Predmety.Predmet.SpecialniSchopnost;
 
 /**
  * Příkaz pro boj s nepřáteli.
- * Zpracovává logiku souboje včetně speciálních případů (pistole, rukojmí, cigarety).
+ * Zpracovává logiku souboje včetně speciálních případů (pistole, rukojmí,
+ * cigarety).
  * Podporuje alarmový systém při použití pistole.
+ *
+ * @author Marek
  */
 public class Souboj implements Command{
     private Hrac hrac;
@@ -17,7 +20,10 @@ public class Souboj implements Command{
 
     /**
      * Vykoná bojový příkaz.
-     * @param nazevP Název zbraně a volitelně "cigarety" pro bonus k útoku
+     * Formát vstupu: {@code <zbraň>} nebo {@code <zbraň> cigarety} pro bonus k
+     * útoku.
+     *
+     * @param nazevP Název zbraně a volitelně {@code "cigarety"} pro bonus k útoku
      * @return Výsledek souboje jako textový popis
      */
     @Override
@@ -68,9 +74,11 @@ public class Souboj implements Command{
 
     /**
      * Pokusí se zajmout šéfa jako rukojmí pomocí pistole.
-     * @param zbran Použitá zbraň
+     *
+     * @param zbran    Použitá zbraň
      * @param nepritel Cílový nepřítel
-     * @return Text výsledku pokud byl šéf zajat, null pokud nebyla použita pistole nebo cíl není šéf
+     * @return Text výsledku pokud byl šéf zajat, {@code null} pokud nebyla použita
+     *         pistole nebo cíl není šéf
      */
     private String zkusitZajmoutRukojmi(Predmet zbran, NPC nepritel){
         if(!zbran.getNazev().equals("pistole")){
@@ -88,6 +96,13 @@ public class Souboj implements Command{
         return null;
     }
 
+    /**
+     * Zpracuje výhru v souboji, kdy hráč má rukojmího.
+     * Stráže se bojí zakročit, takže hráč automaticky vyhraje.
+     *
+     * @param nepritel Porazený nepřítel
+     * @return Textový popis výsledku souboje s rukojmím
+     */
     private String vyhraCelaBojSRukojmim(NPC nepritel){
         StringBuilder zprava = new StringBuilder();
         hrac.getAktMistnost().getMistnostiNPC().remove(nepritel);
@@ -98,11 +113,13 @@ public class Souboj implements Command{
         zprava.append("Vyhrál jsi souboj s ").append(nepritel.getJmeno()).append("!");
         return zprava.toString();
     }
+
     /**
      * Aplikuje bonus k útoku z cigaret a zapalovače (zdvojnásobení síly).
-     * @param silaPredmetu Základní síla zbraně
+     *
+     * @param silaPredmetu   Základní síla zbraně
      * @param pouzitCigarety Zda hráč použil cigarety
-     * @param zprava StringBuilder pro přidání informací o bonusu
+     * @param zprava         StringBuilder pro přidání informací o bonusu
      * @return Finální síla útoku
      */
     private int aplikovatBonusCigaret(int silaPredmetu, boolean pouzitCigarety, StringBuilder zprava){
@@ -132,10 +149,12 @@ public class Souboj implements Command{
     }
 
     /**
-     * Zpracuje výhru v souboji - odebere nepřítele z místnosti a přidá jeho předmět hráči.
+     * Zpracuje výhru v souboji – odebere nepřítele z místnosti a přidá jeho předmět
+     * hráči.
+     *
      * @param nepritel Porazený nepřítel
-     * @param zbran Použitá zbraň
-     * @param zprava StringBuilder se zprávou o souboji
+     * @param zbran    Použitá zbraň
+     * @param zprava   StringBuilder se zprávou o souboji
      * @return Text výsledku souboje
      */
     private String vyhratBoj(NPC nepritel, Predmet zbran, StringBuilder zprava){
@@ -156,6 +175,13 @@ public class Souboj implements Command{
         return zprava.toString();
     }
 
+    /**
+     * Pokusí se přidat předmět poraženého nepřítele do inventáře hráče.
+     * Pokud je inventář plný, předmět je ponechán v místnosti.
+     *
+     * @param nepritel Porazený nepřítel, jehož předmět bude přidán
+     * @param zprava   StringBuilder pro přidání zprávy o získaném předmětu
+     */
     private void zpravaPridejPredmetOdNepritele(NPC nepritel, StringBuilder zprava){
         if(nepritel.getPredmetNPC() == null){
             return;

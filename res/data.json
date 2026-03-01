@@ -32,7 +32,7 @@
         "nazev": "pistole",
         "popis": "Extrémně silný předmět. Umožňuje vzít ředitele jako rukojmí a projít s ním na svobodu. Střelba přiláká pozornost.",
         "schopnost": "MUZE_BOJOVAT",
-        "sila": 10,
+        "sila": 4,
         "nicitelnost": false
       },
       {
@@ -114,13 +114,13 @@
             "mistnostiNPC": [
               {
                 "jmeno": "vyklepanec",
-                "dialog": "Jak jses dostal ven? Nemáž náhodou aspoň cigaretu.",
+                "dialog": "Jjak jses dostal ven?! Nemáš nnáhodou aspoň cigaretu??",
                 "boj": false,
                 "sila": 0
               },
               {
                 "jmeno": "panikar",
-                "dialog": "Když mě osvobodíš dám ti plánek této věznice.",
+                "dialog": "Když... když mě osvobodíš dám ti plánek této věznice.",
                 "boj": false,
                 "sila": 0
               },
@@ -321,8 +321,8 @@
                 }
               },
               {
-                "jmeno": "hrabrich",
-                "dialog": "Díký ten stražný by mě otrevoval donekonecna",
+                "jmeno": "chrabrich",
+                "dialog": "Díký ten strážnyj by mě otravoval do bezkonečna",
                 "boj": false,
                 "sila": 1,
                 "predmetNPC":
@@ -348,13 +348,13 @@
             "mistnostiNPC": [
               {
               "jmeno": "nasvalenec",
-              "dialog": "Něco za něco",
+              "dialog": "Hej brachu, něco za něco",
               "boj": false,
               "sila": "1"
             },
             {
               "jmeno": "snilek",
-              "dialog": "Snil jsem o tom jak jsem ukradl krumpáč z boudy s nářadím a pomoci něho prokopal cestu domů",
+              "dialog": "Víš... zdálo se mi o tom, jak jsem ukradl krumpáč z boudy s nářadím a pomocí něho prokopal cestu domů... ach kéž by to nebyl jen sen...",
               "boj": false,
               "sila": 0
             }
@@ -372,7 +372,7 @@
             "mistnostiNPC": [
               {
                 "jmeno": "sef",
-                "dialog": "Jak ses sem dostal!",
+                "dialog": "Jak ses sem dostal!?",
                 "boj": true,
                 "sila": 2
               }
@@ -666,8 +666,8 @@
             "sila": 20,
             "spVlastnost": null,
             "konec": {
-              "nazev": "UtekHlVchod",
-              "popis": "Utekl jsi!"
+              "popis": "Prorazil jsi ven přes mrtvé strážné a zmizel v nocní tmě. Hodiny chůze po polních cestách, mokré boty, šedé nebe nad hlavou. V ranních hodinách jsi konečně stanul před rodným domem. Zaklepal jsi na dveře. Žena otevřela — a z její tváře zmizela veškerá barva. Přes její rameno jsi viděl v televizi svoji fotku. MASAKR VE VĚZNICI — MNOHO MRTVÝCH. Ticho trvalo věčnost. Pak řekla jedno slovo: „Odejdi.\" Dveře se zavřely. Stál jsi na prahu vlastního domova jako cizinec.",
+              "popisRukojmi": "Pustil jsi šéfa na prahu svobody a rozběhl ses do tmy. Ředitel, ponížený a roztřesený, nekřičel — věděl, že to nepomůže. Zajel jsi domů, nacpal rodinu do auta a jeli jste. Žádné vysvětlování, jen: Jedeme. Nastoupili bez otázek. Přes hranice v noci, děti spaly, žena se neptala. Nový život začal v malém městě daleko od všech. Skromný, tichý — ale pohromadě. A to vždy stačilo."
             },
             "popis": "Vnější zeď - nezničitelná"
         },
@@ -729,8 +729,8 @@
             "sila": 20,
             "spVlastnost": null,
             "konec": {
-              "nazev": "UtekBankou",
-              "popis": "Utekl jsi a zbohatl jsi"
+              "popis": "Trezor už je prázdný a ty jsi vyšel zadním vchodem na ulici. Sám. Kabát plný peněz, žádné plány. Rodinu jsi zanechal — příliš riskantní ji kontaktovat. Žil jsi v přepychu — luxusní hotely, dobré jídlo, nic co ti chybělo v cele. Z daleké země jsi anonymně posílal peníze na účet ženy každých pár měsíců. Ale už jste se nikdy neviděli.",
+              "popisRukojmi": "Šéfa jsi hodil za rohem na zem a měl jsi čas. Zajel jsi domů, nacpal rodinu do auta. Žádné vysvětlení. Peníze z trezoru otevřely dveře kdekoliv — luxusní hotely, soukromé vily, snídaně na terase. Žili jste v přepychu. Jednoho dne v televizi viděli reportáž o nevyřešené krádeži. Děti se smály. Ty jsi přehodil kanál a objednal večeři pro pět."
             },
             "popis": "Vnější zeď trezoru - nezničitelná"
         },

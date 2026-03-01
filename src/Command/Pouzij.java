@@ -3,11 +3,26 @@ package Command;
 import Postavy.Hrac;
 import Predmety.Predmet;
 
+/**
+ * Příkaz pro použití předmětu z inventáře hráče.
+ * Zpracovává různé typy předmětů podle jejich speciální schopnosti:
+ * ničení zdí, šroubování ventilace, pilování mříží a teleportaci.
+ * Předměty označené jako nicitelné jsou po použití zničeny.
+ *
+ * @author Marek
+ */
 public class Pouzij implements Command{
 
     private Hrac hrac;
 
-
+    /**
+     * Použije předmět z inventáře hráče.
+     * Formát vstupu: {@code <název_předmětu>} nebo {@code <název_předmětu> <směr>}
+     * (směr je vyžadován pro předměty pracující se zdmi).
+     *
+     * @param prikaz Název předmětu a volitelně směr (sever/jih/vychod/zapad)
+     * @return Textový popis výsledku použití předmětu
+     */
     @Override
     public String execute(String prikaz) {
         String[] prikazy = prikaz.split(" ",2);
@@ -27,6 +42,9 @@ public class Pouzij implements Command{
                     return "Kam chceš použít " + predmet.getNazev() + "? (sever/jih/vychod/zapad)";
                 }
                 if(hrac.getAktMistnost().znicZed(predmet.getSila(),prikazy[1])){
+                    if (predmet.getNazev().equals("dynamit")) {
+                        hrac.setHlucneOdhaleni(true);
+                    }
                     if(hrac.moznaZnicit(predmet)){
                         return "Zničil jsi zeď, ale zničil si předmět";
                     }
@@ -49,6 +67,7 @@ public class Pouzij implements Command{
                     return "Kam chceš použít " + predmet.getNazev() + "? (sever/jih/vychod/zapad)";
                 }
                 if(hrac.getAktMistnost().pilovatMrize(prikazy[1])){
+                    hrac.moznaZnicit(predmet);
                     Predmet tyc = hrac.getDataHry().getZeleznaTyc();
                     if(tyc != null){
                         if(hrac.inventarPridat(tyc)){
@@ -62,6 +81,7 @@ public class Pouzij implements Command{
                 return "Ve zdi nejsou mříže";
             case MUZE_TELEPORTOVAT:
                 hrac.setAktMistnost(hrac.getDataHry().nahodnaMistnost());
+                hrac.moznaZnicit(predmet);
                 return "Teleportoval ses do " + hrac.getAktMistnost().toString();
             default:
                 return "předmět nejde použít v tomto případě";

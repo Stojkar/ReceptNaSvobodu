@@ -6,7 +6,10 @@ import System.ConsoleApp;
 /**
  * Hlavní herní třída, která řídí inicializaci a průběh hry.
  * Spravuje hráče, načítání herních dat a životní cyklus konzolové aplikace.
- * Poskytuje dva režimy spuštění: rychlý start bez úvodu a plný start s příběhovým úvodem.
+ * Poskytuje dva režimy spuštění: rychlý start bez úvodu a plný start s
+ * příběhovým úvodem.
+ *
+ * @author Marek
  */
 public class Hra {
 
@@ -16,20 +19,9 @@ public class Hra {
     private ConsoleApp console;
 
     /**
-     * Rychlý test - načte hru bez příběhového úvodu.
-     * Spustí hru přímo v první místnosti.
-     */
-    public void test(){
-
-        DataHry data = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("data.json"));
-        hrac = new Hrac(data.getMistosti().getFirst());
-        this.console.start();
-
-    }
-
-    /**
-     * Plný start - načte hru s příběhovým úvodem a výběrem předmětů.
+     * Plný start – načte hru s příběhovým úvodem a výběrem předmětů.
      * Zobrazí úvod, umožní hráči vybrat cestu a počáteční předměty.
+     * Pokud hráč zvolí obtížnost 0, hra se ukončí bez spuštění.
      */
     public void start(){
         DataHry data = DataHry.loadGameDataFromResources(getClass().getResourceAsStream("data.json"));
@@ -41,7 +33,7 @@ public class Hra {
         Volba vybranaVolba = console.zobrazUvod(pribeh);
 
         System.out.println(vybranaVolba.getPopis());
-        if(vybranaVolba.getCesta().equals("poctivost")){
+        if(vybranaVolba.getObtiznost() == 0){
 
             System.out.println("Pekárna zkrachovala a rodina skončila na ulici.");
             System.out.println("\nKONEC HRY");

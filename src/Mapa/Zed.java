@@ -10,10 +10,18 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
         property = "id"
 )
 
-
+/**
+ * Reprezentuje zeď mezi dvěma místnostmi ve věznici.
+ * Zeď může být průchodná, mít speciální vlastnost (ventilace, mříže)
+ * nebo vést na konec hry. Síla zdi určuje, jaký předmět ji může zničit.
+ *
+ * @author Marek
+ */
 public class Zed {
 
-
+    /**
+     * Výčet speciálních vlastností zdi.
+     */
     public enum SpecialniVlastnost {
         JE_VENTILACE,
         JSOU_MRIZE
@@ -34,6 +42,14 @@ public class Zed {
     public Zed() {
     }
 
+    /**
+     * Vrátí druhou místnost za touto zdí (z pohledu hráče stojícího v dané
+     * místnosti).
+     *
+     * @param mistnostKdeStoji Místnost, ve které se hráč aktuálně nachází
+     * @return Druhá místnost sousedící s touto zdí, nebo {@code null} pokud vstup
+     *         je {@code null}
+     */
     public Mistnost getDruhouMistnost(Mistnost mistnostKdeStoji){
         if(mistnostKdeStoji == null){
             return null;

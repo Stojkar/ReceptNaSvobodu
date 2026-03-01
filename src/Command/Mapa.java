@@ -6,6 +6,22 @@ import Postavy.Hrac;
 
 import java.util.*;
 
+/**
+ * Příkaz pro zobrazení textové mapy věznice v konzoli.
+ * Vykresluje mřížku místností s barevným rozlišením zdí a průchodů.
+ * Zobrazení závisí na tom, jaké mapy hráč získal:
+ * <ul>
+ * <li>Plány budovy ({@code mapaBitelostiZdi}) – zobrazí sílu a typ všech
+ * zdí</li>
+ * <li>Mapa ventilací ({@code mapaVentilaci}) – zobrazí ventilační šachty</li>
+ * <li>Bez plánů – zobrazí pouze navštívené místnosti</li>
+ * </ul>
+ *
+ * <p>
+ * <b>Poznámka:</b> Metoda {@code execute} byla implementována s pomocí AI.
+ *
+ * @author Marek
+ */
 public class Mapa implements Command {
 
     private static final String RESET = "\u001B[0m";
@@ -27,6 +43,17 @@ public class Mapa implements Command {
         return false;
     }
 
+    /**
+     * Vytvoří a vrátí textovou reprezentaci mapy věznice.
+     * BFS algoritmem projde dostupné místnosti, přiřadí jim souřadnice a vykreslí
+     * je do textové mřížky s barevně odlišenými zdmi a průchody.
+     *
+     * <p>
+     * <b>Poznámka:</b> Tato metoda byla implementována s pomocí AI.
+     *
+     * @param smer Parametr není využit
+     * @return Textová mapa věznice s legendou
+     */
     @Override
     public String execute(String smer) {
         boolean planyBudovy = hrac.isMapaBitelostiZdi(); // vidi celu mapu
@@ -92,17 +119,15 @@ public class Mapa implements Command {
                 } else if (m.getId().equals(aktId)) {
                     radekMistnosti.append(BOLD + "[>>>ZDE<<<]" + RESET + " ");
                 } else if (!planyBudovy && !planyVentilaci && !m.isNavstivena()) {
-                    // Fog of war - nenavstivena
                     radekMistnosti.append("            ");
                 } else if (planyVentilaci && !planyBudovy) {
-                    // Rezim sachet - ukazuje vse ale jen sachty maji nazev
                     boolean maSachtu = majeSachtu(m);
+                    String nazev = m.getNazev();
+                    if (nazev.length() > 7)
+                        nazev = nazev.substring(0, 7);
                     if (maSachtu) {
-                        radekMistnosti.append(CYAN + "[~ SACHTA ~]" + RESET + " ");
+                        radekMistnosti.append(CYAN + "[~" + String.format("%-7s", nazev) + "]" + RESET + " ");
                     } else {
-                        String nazev = m.getNazev();
-                        if (nazev.length() > 8)
-                            nazev = nazev.substring(0, 8);
                         radekMistnosti.append(String.format("[%-8s] ", nazev));
                     }
                 } else {
@@ -154,12 +179,15 @@ public class Mapa implements Command {
         }
 
         sb.append("\n");
-        sb.append(GREEN + ">>>" + RESET + " vychod  ");
-        sb.append(CYAN + "~~~" + RESET + " sachta  ");
-        sb.append(YELLOW + "===" + RESET + " mrize  ");
-        sb.append(PURPLE + "###" + RESET + " dynamit  ");
-        sb.append(RED + "xxx" + RESET + " neznicitelna  ");
-        sb.append("--- normalni dvere\n");
+        sb.append(BOLD).append("── LEGENDA ─────────────────────────────────\n").append(RESET);
+        sb.append("  ").append(BOLD).append("[>>>ZDE<<<]").append(RESET).append("  Tvoje aktuální poloha\n");
+        sb.append("  ").append("---  / |").append("        Průchozí dveře\n");
+        sb.append("  ").append(CYAN + "~~~ / ~" + RESET).append("        Ventilační šachta\n");
+        sb.append("  ").append(YELLOW + "=== / =" + RESET).append("        Mříže (lze přepilovat)\n");
+        sb.append("  ").append(PURPLE + "### / #" + RESET).append("        Zeď na dynamit\n");
+        sb.append("  ").append(RED + "xxx / x" + RESET).append("        Nezničitelná vnější zeď\n");
+        sb.append("  ").append(GREEN + ">>> / ^" + RESET).append("        Východ / cíl\n");
+        sb.append(BOLD).append("────────────────────────────────────────────\n").append(RESET);
 
         return sb.toString();
     }

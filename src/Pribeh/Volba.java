@@ -1,5 +1,12 @@
 package Pribeh;
 
+/**
+ * Reprezentuje volbu v příběhovém úvodu hry.
+ * Hráč si vybírá cestu (volbu) na začátku hry, která určuje obtížnost
+ * a počet počátečních předmětů dostupných z balíčku.
+ *
+ * @author Marek
+ */
 public class Volba {
 
     private String cesta;
@@ -7,11 +14,6 @@ public class Volba {
     private int obtiznost;
     private int pocetPredmetu;
 
-    public Volba(String cesta, String popis, int obtiznost) {
-        this.cesta = cesta;
-        this.popis = popis;
-        this.obtiznost = obtiznost;
-    }
 
     public Volba() {
     }

@@ -25,7 +25,9 @@ import java.util.Scanner;
  * Konzolová aplikace, která řídí hlavní herní smyčku.
  * Zpracovává uživatelské vstupy, vykonává příkazy a zobrazuje výstupy.
  * Obsahuje logiku pro registraci příkazů, zpracování alarmu a rozbalení
- * balíčku.
+ * balíčku na začátku hry.
+ *
+ * @author Marek
  */
 public class ConsoleApp {
 
@@ -63,6 +65,10 @@ public class ConsoleApp {
         commands.put("podej", new Podej(hrac));
     }
 
+    /**
+     * Načte a vykoná jeden příkaz od hráče ze standardního vstupu.
+     * Pokud je v místnosti nepřítel a hráč nezaútočí a nemá rukojmího, hra skončí.
+     */
     public void execude() {
         System.out.print(">>> ");
         String prikaz = scanner.nextLine();
@@ -99,7 +105,7 @@ public class ConsoleApp {
 
     /**
      * Zpracovává alarmový systém pro hlasité předměty (dynamit, pistole).
-     * Po třech příkazích po odebalení vytvoří ozbrojenou ochranu.
+     * Po třech příkazech po odhalení vytvoří v místnosti ozbrojenou ochranu.
      */
     private void zpracovatHlucneOdhaleni() {
         if (!hrac.isHlucneOdhaleni()) {
@@ -117,9 +123,14 @@ public class ConsoleApp {
             stvoreniOzbrojeneOchranky();
             System.out.println("\n PŘIBĚHLA OZBROJENÁ OCHRANKA! Musíš bojovat!\n");
             hrac.setPocetPrikazuPoOdhaleni(0);
+            hrac.setHlucneOdhaleni(false);
         }
     }
 
+    /**
+     * Přidá ozbrojenou ochranu do aktuální místnosti hráče.
+     * Voláno po uplynutí alarmového odpočtu.
+     */
     private void stvoreniOzbrojeneOchranky() {
         DataHry data = hrac.getDataHry();
         if (data == null || data.getOzbrojenaOchranka() == null) {
@@ -130,6 +141,13 @@ public class ConsoleApp {
         hrac.getAktMistnost().getMistnostiNPC().add(OzbrojenaOchranka);
     }
 
+    /**
+     * Interaktivně nechá hráče vybrat počáteční předměty z balíčku rodiny.
+     * Hráč vybírá čísla předmětů ze seznamu, dokud nevybere požadovaný počet.
+     *
+     * @param pocetPredmetu   Počet předmětů, které hráč musí vybrat
+     * @param vsechnyPredmety Seznam všech dostupných předmětů k výběru
+     */
     public void rozbalBalicek(int pocetPredmetu, java.util.ArrayList<Predmety.Predmet> vsechnyPredmety) {
         if (pocetPredmetu == 0) {
             return;
@@ -184,6 +202,13 @@ public class ConsoleApp {
         System.out.println("\nBalíček rozbalen! Hra začíná...\n");
     }
 
+    /**
+     * Zobrazí příběhový úvod a nechá hráče zvolit svou cestu.
+     * Opakuje výzvu dokud hráč nezadá platnou volbu.
+     *
+     * @param pribeh Data příběhu obsahující úvodní text a seznam voleb
+     * @return Vybraná volba hráče
+     */
     public Volba zobrazUvod(DataHry pribeh) {
         System.out.println(pribeh.getUvodniText());
         boolean spravnostVolby = true;
@@ -212,6 +237,11 @@ public class ConsoleApp {
         return vybranaVolba;
     }
 
+    /**
+     * Spustí hlavní herní smyčku.
+     * Označí počáteční místnost jako navštívenou, inicializuje příkazy
+     * a opakovaně volá {@link #execude()} dokud hra neskončí.
+     */
     public void start() {
         if (hrac != null) {
             hrac.getAktMistnost().setNavstivena(true);

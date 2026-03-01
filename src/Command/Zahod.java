@@ -3,9 +3,22 @@ package Command;
 import Postavy.Hrac;
 import Predmety.Predmet;
 
+/**
+ * Příkaz pro zahození předmětu z inventáře hráče na zem v aktuální místnosti.
+ * Odebere předmět z inventáře a umístí ho do místnosti.
+ *
+ * @author Marek
+ */
 public class Zahod implements Command{
     private Hrac hrac;
 
+    /**
+     * Zahodí předmět z inventáře hráče na zem v aktuální místnosti.
+     *
+     * @param prikaz Název předmětu, který má být zahozen
+     * @return Zpráva o úspěšném zahození, nebo chybová zpráva pokud předmět v
+     *         inventáři není
+     */
     @Override
     public String execute(String prikaz) {
         Predmet predmet =  hrac.najdiPredmetInventar(prikaz);
